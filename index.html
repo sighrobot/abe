@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Abe Rubenstein</title>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@sighrobot">
+  <meta name="twitter:description"
+    content="Abe Rubenstein is a software engineer and educator in NYC.">
+  <meta name="twitter:image" content="https://abe.sh/home.png">
+  <meta name="twitter:site" content="@sighrobot">
+  <meta name="twitter:title" content="Abe Rubenstein">
+
+  <meta name="og:image" content="https://abe.sh/home.png">
+  <meta name="og:title" content="Abe Rubenstein">
+  <meta name="og:url" content="https://abe.sh/">
+  <meta name="og:description" content="Abe Rubenstein is a software engineer and educator in NYC.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="canonical" href="https://abe.sh/">
+
+  <style>
+    body {
+      color: white;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      margin: 0;
+      letter-spacing: 0.5px;
+      font-weight: 200;
+      font-size: 16px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: 200ms ease text-shadow;
+      font-weight: 400;
+    }
+
+    h1>span:hover,
+    a:hover {
+      cursor: pointer;
+      text-shadow: 2px 2px 2px white;
+    }
+
+    h1 {
+      user-select: none;
+      margin: 0;
+      border-bottom: none !important;
+      text-transform: uppercase;
+      line-height: 8vh;
+      font-size: 20px;
+      font-weight: 400;
+      padding: 0 60px;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      -webkit-tap-highlight-color: transparent;
+      transition: 200ms ease text-shadow;
+    }
+
+    footer {
+      display: flex;
+      padding: 20px 40px;
+      line-height: normal;
+    }
+
+    footer .social {
+      align-items: center;
+      display: flex;
+      line-height: normal;
+    }
+
+    footer .social a {
+      opacity: 0.5;
+      transition: 200ms ease opacity;
+    }
+
+    footer .social a:hover {
+      opacity: 1;
+    }
+
+    footer .social a img {
+      height: 20px;
+      width: 20px;
+    }
+
+    footer .social a {
+      margin-left: 20px;
+    }
+
+    footer pre {
+      opacity: 0.5;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0 20px;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+      border-radius: 2px;
+      padding: 20px;
+      margin: 0;
+      transition: 200ms ease background;
+    }
+
+    ul:hover {
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    ul+h3 {
+      margin-top: 20px;
+    }
+
+    h3+ :not(h3) {
+      margin-top: 10px;
+    }
+
+    li {
+      line-height: 1.33;
+    }
+
+    li+li {
+      margin-top: 10px;
+    }
+
+    body> :not(script) {
+      border-bottom-style: solid;
+      border-color: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body > :not(script) {
+            border-color: #3f454e;
+        }
+    }
+
+    main {
+      min-height: 92vh !important;
+      height: auto !important;
+      border-bottom: none !important;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    main+div,
+    main+div+div,
+    main+div+div+div {
+      display: none;
+    }
+
+    article {
+      max-width: 600px;
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 2px;
+      width: 100%;
+      transition: 200ms ease background;
+    }
+
+    article:hover {
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    article.talks li a {
+      display: block;
+      line-height: 1.33;
+    }
+
+    pre {
+      margin: 0;
+    }
+
+    p {
+      border-radius: 2px;
+      line-height: 1.33;
+      padding: 20px;
+      margin: 0;
+    }
+
+    p:hover {
+      background: rgba(255, 255, 255, 0.075);
+    }
+  </style>
+  <link type="image/x-icon" rel="shortcut icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABfUlEQVR4Xu3cgQnDMBDFUN+OWcOTZchkjQenTiAkf3BC2zl9KAND0QRzCoIdgoIUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC1EC3Lf58OYVuO0ECx/QQqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxjO9K0Tq0hBrB79by/WoyAF0QxgPF17C4IZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKe3vQXBDGA4LUQLgvGsx+mWhR2BghQEM4DhtJCCYAYwnBZSEMwAhtODYUEwAxhOCykIZgDDaSFaEIxnPU7PIdgRKEhBMAMYTgvRgvQbQ6tI116rxylIQTADGE4LKQhmAMNpIQXBDGA4P1IALlbUwQsGAAAAAElFTkSuQmCC">
+</head>
+
+<body itemscope="" itemtype="http://schema.org/Person" style="background: rgb(87, 137, 67);">
+  <!-- graphical elements -->
+  <div style="height: 0px; transform: translateY(-1px); background: rgb(255, 255, 255); border-bottom-width: 34vh;"></div>
+  <div style="height: 1vh; background: rgb(226, 238, 221); border-bottom-width: 21vh;"></div>
+  <div style="height: 2vh; background: rgb(196, 221, 187); border-bottom-width: 13vh;"></div>
+  <div style="height: 3vh; background: rgb(167, 205, 152); border-bottom-width: 8vh;"></div>
+  <div style="height: 5vh; background: rgb(138, 188, 118); border-bottom-width: 5vh;"></div>
+
+  <h1 style="height: 8vh; background: rgb(109, 171, 84); border-bottom-width: 3vh;">
+    <span onclick="favicon(color())">
+      <span itemprop="givenName">Abe</span>
+      <span itemprop="familyName">Rubenstein</span>
+    </span>
+  </h1>
+  <main style="height: 13vh; background: rgb(87, 137, 67); border-bottom-width: 2vh;">
+    <article>
+      <ul>
+        <li>
+            Software Engineer, Data Visualization at <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+        </li>
+      </ul>
+
+      <h3>Previously</h3>
+      <ul>
+        <li>
+          Senior Software Engineer at <a href="https://enigma.com/" target="_blank">Enigma</a>
+        </li>
+        <li>Lecturer at <a href="https://commons.pratt.edu/savi/" target="_blank">Pratt SAVI</a></li>
+	<li>Visiting Critic at <a href="https://ctc.risd.edu/" target="_blank">RISD</a></li>
+        <li>Adjunct Faculty at <a href="https://cs.nyu.edu/home/index.html" target="_blank">Courant Institute of Mathematical Sciences</a></li>
+        <li>Graduate Student at <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a></li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Creations</h3>
+      <ul>
+	<li>
+          <a href="https://publicdata.today/" target="_blank">Today in Public Data</a>
+        </li>
+        <li>
+          <a href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+            target="_blank">You Are Here</a>
+        </li>
+	<li>
+	  <a href="/plotbox/" target="_blank">Plotbox</a>
+	</li>
+	<li><a href="/progression/" target="_blank">Progression</a></li>
+        <li><a href="https://expl.re/" target="_blank">Internaut Explorer</a></li>
+        <li><a href="https://abe.sh/block-chords/" target="_blank">Block Chords</a></li>
+      </ul>
+
+      <h3>Collaborations</h3>
+      <ul>
+	<li><a href="https://2020.datathroughdesign.com/artists" target="_blank">Almost Everywhere</a></li>
+        <li><a href="https://labs.enigma.com/healthcare-data/" target="_blank">A Prescription For Healthcare Data</a>
+        </li>
+        <li><a href="https://labs.enigma.com/north-dakota-boom-to-bust/" target="_blank">Boom to Bust</a></li>
+      </ul>
+    </article>
+
+    <article class="talks">
+      <h3>Talks</h3>
+      <ul>
+        <li>
+          <a href="https://www.meetup.com/UX-Data/events/254638995/" target="_blank">I'm Feeling Curious: Probing
+            the Peculiarities of Public Data</a>
+          UX + Data
+        </li>
+        <li>
+          <a href="https://www.meetup.com/ReactNYC/events/251044227/" target="_blank">Building a Server-Rendered
+            React App for Public Data Using Next.js</a>
+          ReactNYC
+        </li>
+        <li>
+          <a href="https://www.meetup.com/New-York-City-Elastic-Fantastics/events/248060469/" target="_blank">Enigma
+            Public</a>
+          Elastic NYC
+        </li>
+        <li>
+          <a href="https://www.meetup.com/geonyc/events/241643293/" target="_blank">Total Eclipse of the Heartland</a>
+          GeoNYC
+        </li>
+      </ul>
+    </article>
+
+    <footer>
+      <pre>sighrobot at gmail</pre>
+      <span class="social">
+        <a itemprop="sameAs" href="https://github.com/sighrobot" target="_blank">
+          <img src="./github.svg">
+        </a>
+
+        <a itemprop="sameAs" href="https://twitter.com/sighrobot" target="_blank">
+          <img src=".//twitter.svg">
+        </a>
+      </span>
+    </footer>
+  </main>
+
+  <div style="height: 21vh; background: rgb(65, 103, 50); border-bottom-width: 1vh;"></div>
+
+  <div style="height: 34vh; background: rgb(43, 68, 34); border-bottom-width: 1vh;"></div>
+
+  <div style="height: 55vh; background: rgb(22, 34, 17); border-bottom-width: 0px;"></div>
+
+  <script>
+
+    // https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+    function fibonacci(num, memo) {
+      memo = memo || {};
+
+      if (memo[num]) return memo[num];
+      if (num <= 1) return 1;
+
+      return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+    }
+
+    function color() {
+      var randHSL = [
+        Math.floor(Math.random() * 360),
+        Math.floor(Math.random() * 100) + '%',
+      ];
+
+      var sections = document.querySelectorAll('body > :not(script)');
+
+      for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var fib = fibonacci(i);
+
+        randHSL.push((sections.length - i) / sections.length * 100 + '%');
+
+        var colorString = 'hsl(' + randHSL.join(',') + ')';
+
+        if (section.tagName === 'MAIN') {
+          document.body.style.background = colorString;
+        }
+
+        section.style.height = i === 0 ? 0 : fib + 'vh';
+        section.style.background = colorString;
+        section.style.borderBottomWidth = i === sections.length - 1
+          ? '0'
+          : fibonacci(sections.length - i - 2) + 'vh';
+
+        randHSL.splice(2);
+      }
+
+      return 'hsl(' + randHSL.join(',') + ', 50%)';
+    }
+
+    function favicon(color) {
+      var canvas = document.createElement('canvas');
+
+      canvas.width = 100;
+      canvas.height = 100;
+
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = color;
+
+      ctx.fillRect(0, 34, canvas.width, 1);
+      ctx.fillRect(0, 56, canvas.width, 2);
+      ctx.fillRect(0, 71, canvas.width, 3);
+      ctx.fillRect(0, 82, canvas.width, 5);
+      ctx.fillRect(0, 92, canvas.width, 8);
+
+      var oldLink = document.querySelector("link[rel*='icon']");
+
+      if (oldLink) {
+        document.head.removeChild(oldLink);
+      }
+
+      var link = document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = canvas.toDataURL('image/png');
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+
+    favicon(color())
+
+  </script>
+
+
+
+</body>
+
+</html>
