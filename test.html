@@ -5,13 +5,13 @@
     <style>
       * {
         box-sizing: border-box;
-        font-size: 16px;
-        font-family: "Helvetica Neue", Arial;
+        font-size: 15px;
+        font-family: 'Helvetica Neue', Arial;
         font-weight: 200;
       }
 
       body {
-        background: linear-gradient(to bottom, white, #eee, #ddd, #ccc);
+        /* background: linear-gradient(to bottom, white, #eee, #ddd, #ccc); */
         color: #16161d;
         margin: 0;
       }
@@ -51,7 +51,7 @@
 
       hr#now {
         border-top: 1px solid #16161d;
-        border-width: 2px;
+        border-width: 1px;
       }
 
       aside {
@@ -90,7 +90,8 @@
       }
 
       .el > * {
-        padding: 0 7.5px;
+        padding: 0 10px;
+        padding-top: 2px;
       }
 
       .el > *:last-child {
@@ -167,7 +168,7 @@
 
       <section>
         <hr id="now" />
-        <aside class="now">Today</aside>
+        <aside class="now">Now</aside>
         <hr data-date="2021-01-01" />
         <hr data-date="2020-01-01" />
         <hr data-date="2019-01-01" />
@@ -259,6 +260,10 @@
         </ul>
 
         <ul id="projects" class="el">
+          <li data-start="2021-03-01">
+            <a href="https://grex.es" target="_blank">Orchidex</a>
+          </li>
+
           <li data-start="2020-02-28" data-end="2020-03-10">
             <a href="https://2020.datathroughdesign.com/artists" target="_blank"
               >Almost Everywhere</a
@@ -302,14 +307,15 @@
 
     <script>
       const COLORS = {
-        software: "100,149,237",
-        teaching: "32,178,170",
-        projects: "218,112,214",
+        software: '100,149,237',
+        teaching: '32,178,170',
+        projects: '218,112,214',
       };
-      const HEIGHT_PER_YEAR = window.innerHeight / 3;
+      const HEIGHT_PER_YEAR = window.innerHeight / 4;
       const NOW = new Date();
-      const END = new Date(new Date(NOW).setMonth(NOW.getMonth() + 6));
-      const START = new Date("2013-03-26");
+      // const END = NOW;
+      const END = new Date(new Date(NOW).setMonth(NOW.getMonth() + 3));
+      const START = new Date('2013-03-26');
 
       const calcHeight = (startDate, endDate) => {
         const numYears =
@@ -318,7 +324,7 @@
         return Math.abs(numYears * HEIGHT_PER_YEAR);
       };
 
-      document.querySelector("section").style.height = `${calcHeight(
+      document.querySelector('section').style.height = `${calcHeight(
         START,
         END
       )}px`;
@@ -332,9 +338,9 @@
           const endDate = end ? new Date(end) : END;
 
           if (!end) {
-            item.querySelector("span").style.top = `${
-              calcHeight(NOW, END) + 5
-            }px`;
+            // item.querySelector('span').style.top = `${
+            //   calcHeight(NOW, END) + 5
+            // }px`;
           }
 
           if (startDate) {
@@ -342,7 +348,7 @@
             item.style.top = `${calcHeight(endDate, END)}px`;
 
             if (startDate.getTime() > NOW.getTime()) {
-              item.style.opacity = "0.33";
+              item.style.opacity = '0.33';
             }
 
             const topPct =
@@ -366,9 +372,9 @@
               stops.unshift(`rgba(${COLORS[key]}, ${futurePct})`);
             }
 
-            const gradient = `linear-gradient(to bottom, ${stops.join(",")})`;
+            const gradient = `linear-gradient(to bottom, ${stops.join(',')})`;
 
-            const mark = document.createElement("mark");
+            const mark = document.createElement('mark');
 
             mark.style.background = gradient;
 
@@ -377,19 +383,19 @@
         });
       };
 
-      size("software");
-      size("teaching");
-      size("projects");
+      size('software');
+      size('teaching');
+      size('projects');
 
-      const hrNow = document.querySelector("hr#now");
+      const hrNow = document.querySelector('hr#now');
 
       hrNow.style.top = `${calcHeight(NOW, END)}px`;
 
-      const a = document.querySelector("aside");
+      const a = document.querySelector('aside');
 
       a.style.top = `${calcHeight(NOW, END) + 4}px`;
 
-      Array.from(document.querySelectorAll("hr")).forEach((hr, itemIdx) => {
+      Array.from(document.querySelectorAll('hr')).forEach((hr, itemIdx) => {
         const { date } = hr.dataset;
 
         if (date) {
@@ -397,7 +403,7 @@
 
           hr.style.top = `${calcHeight(d, END)}px`;
 
-          const as = document.createElement("aside");
+          const as = document.createElement('aside');
 
           as.style.top = `${calcHeight(d, END)}px`;
           as.innerHTML = (d.getFullYear() + 1).toString().slice(2);
