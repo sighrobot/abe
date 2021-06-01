@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: "Helvetica Neue", Arial;
+        font-weight: 200;
+      }
+
+      body {
+        background: linear-gradient(to bottom, white, #eee, #ddd, #ccc);
+        color: #16161d;
+        margin: 0;
+      }
+
+      li {
+        margin: 0;
+        line-height: 1.2;
+      }
+      li strong {
+        font-weight: 400;
+      }
+
+      li a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      li strong a {
+        font-weight: inherit;
+      }
+
+      li a:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        position: absolute;
+        background: none;
+        border: none;
+        right: 10px;
+        left: 10px;
+        border-top: 1px solid #eee;
+        height: 1px;
+        border-color: rgba(0, 0, 0, 0.05);
+        margin: 0;
+      }
+
+      hr#now {
+        border-top: 1px solid #16161d;
+        border-width: 2px;
+      }
+
+      aside {
+        position: absolute;
+        text-align: right;
+        right: 10px;
+        margin: 0;
+        font-size: 8px;
+        font-weight: 200;
+        text-transform: uppercase;
+        color: #63666a;
+      }
+
+      aside.now {
+        color: inherit;
+        font-weight: 400;
+        font-size: 10px;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        padding: 20px 10px;
+        color: inherit;
+        font-size: 20px;
+        line-height: 1;
+        margin: 0 auto;
+        max-width: 1030px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .el > * {
+        padding: 0 7.5px;
+      }
+
+      .el > *:last-child {
+        border-bottom: none;
+      }
+
+      .el li {
+        min-height: 10px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #3f454e;
+          background: linear-gradient(to bottom, #3f454e, #2f353e, #16161d);
+          color: white;
+        }
+
+        h1 {
+          border-color: white;
+        }
+
+        hr {
+          border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        hr#now {
+          border-color: white;
+        }
+
+        aside {
+          color: #97999a;
+        }
+      }
+
+      section {
+        flex-grow: 1;
+        position: relative;
+        align-items: flex-start;
+        display: flex;
+        max-width: 1030px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+      section > ul {
+        flex-grow: 1;
+        width: 100%;
+      }
+
+      ul {
+        position: relative;
+      }
+
+      li {
+        position: absolute;
+        width: 100%;
+      }
+
+      li span {
+        position: absolute;
+      }
+
+      mark {
+        width: 5px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Abe Rubenstein</h1>
+
+      <section>
+        <hr id="now" />
+        <aside class="now">Today</aside>
+        <hr data-date="2021-01-01" />
+        <hr data-date="2020-01-01" />
+        <hr data-date="2019-01-01" />
+        <hr data-date="2018-01-01" />
+        <hr data-date="2017-01-01" />
+        <hr data-date="2016-01-01" />
+        <hr data-date="2015-01-01" />
+        <hr data-date="2014-01-01" />
+
+        <ul id="software" class="el">
+          <li data-start="2019-10-07">
+            <span>
+              Software Engineer, Data Visualization
+              <div></div>
+              <strong
+                ><a href="https://www.datadoghq.com/" target="_blank"
+                  >Datadog</a
+                ></strong
+              >
+            </span>
+          </li>
+          <li data-start="2015-07-20" data-end="2019-07-20">
+            Senior Software Engineer
+            <div></div>
+            <strong
+              ><a href="https://enigma.com/" target="_blank">Enigma</a></strong
+            >
+          </li>
+        </ul>
+
+        <ul id="teaching" class="el">
+          <li data-start="2020-08-31" data-end="2020-12-14">
+            <a
+              href="https://courses.newschool.edu/courses/PSAM5170/4367/"
+              target="_blank"
+              >Part-Time Faculty</a
+            >
+            <div></div>
+            <strong
+              ><a href="https://www.newschool.edu/parsons/" target="_blank"
+                >Parsons</a
+              ></strong
+            >
+          </li>
+          <li data-start="2018-09-01" data-end="2019-10-14">
+            <a
+              href="https://commons.pratt.edu/savi/abe-rubenstein/"
+              target="_blank"
+              >Lecturer</a
+            >
+            <div></div>
+            <strong
+              ><a href="https://commons.pratt.edu/savi/" target="_blank"
+                >Pratt SAVI</a
+              ></strong
+            >
+          </li>
+          <li data-start="2018-01-19" data-end="2018-01-19">
+            <a href="https://ctc.risd.edu/" target="_blank">Visiting Critic </a>
+            <div></div>
+            <strong
+              ><a href="https://www.risd.edu/" target="_blank">RISD</a></strong
+            >
+          </li>
+          <li data-start="2016-01-20" data-end="2016-12-23">
+            <a
+              href="https://cs.nyu.edu/~abrahamr/courses/cs0002fall2016/"
+              target="_blank"
+              >Adjunct Faculty</a
+            >
+            <div></div>
+            <strong
+              ><a href="https://cs.nyu.edu/home/index.html" target="_blank"
+                >NYU Courant</a
+              ></strong
+            >
+          </li>
+          <li data-start="2013-09-01" data-end="2015-05-15">
+            Graduate Student
+            <div></div>
+            <strong
+              ><a
+                href="https://tisch.nyu.edu/itp/admissions/itp-mps"
+                target="_blank"
+                >ITP</a
+              ></strong
+            >
+          </li>
+        </ul>
+
+        <ul id="projects" class="el">
+          <li data-start="2020-02-28" data-end="2020-03-10">
+            <a href="https://2020.datathroughdesign.com/artists" target="_blank"
+              >Almost Everywhere</a
+            >
+          </li>
+          <li data-start="2019-09-01" data-end="2019-09-01">
+            <a
+              href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+              target="_blank"
+              >You Are Here</a
+            >
+          </li>
+          <li data-start="2019-01-27" data-end="2019-01-27">
+            <a href="https://abe.sh/plotbox/" target="_blank">Plotbox</a>
+          </li>
+          <li data-start="2018-05-30" data-end="2018-05-30">
+            <a href="https://publicdata.today/" target="_blank"
+              >Today in Public Data</a
+            >
+          </li>
+          <li data-start="2017-01-25" data-end="2017-01-25">
+            <a href="https://boundless.js.org/" target="_blank">Boundless</a>
+          </li>
+          <li data-start="2015-05-15" data-end="2015-05-15">
+            <a href="https://expl.re/" target="_blank">Internaut Explorer</a>
+          </li>
+          <li data-start="2015-02-14" data-end="2015-02-14">
+            <a href="https://abe.sh/block-chords/" target="_blank"
+              >Block Chords</a
+            >
+          </li>
+          <!-- <li data-start="2014-06-20" data-end="2014-06-20">
+            Moon
+          </li> -->
+          <li data-start="2013-03-26" data-end="2014-06-03">
+            <a href="https://abe.sh/madbus/#/" target="_blank">Madbus</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const COLORS = {
+        software: "100,149,237",
+        teaching: "32,178,170",
+        projects: "218,112,214",
+      };
+      const HEIGHT_PER_YEAR = window.innerHeight / 3;
+      const NOW = new Date();
+      const END = new Date(new Date(NOW).setMonth(NOW.getMonth() + 6));
+      const START = new Date("2013-03-26");
+
+      const calcHeight = (startDate, endDate) => {
+        const numYears =
+          (endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24 / 365;
+
+        return Math.abs(numYears * HEIGHT_PER_YEAR);
+      };
+
+      document.querySelector("section").style.height = `${calcHeight(
+        START,
+        END
+      )}px`;
+
+      const size = (key) => {
+        const items = document.querySelectorAll(`#${key} li`);
+
+        Array.from(items).forEach((item, itemIdx) => {
+          const { start, end } = item.dataset;
+          const startDate = start ? new Date(start) : null;
+          const endDate = end ? new Date(end) : END;
+
+          if (!end) {
+            item.querySelector("span").style.top = `${
+              calcHeight(NOW, END) + 5
+            }px`;
+          }
+
+          if (startDate) {
+            item.style.height = `${calcHeight(startDate, endDate)}px`;
+            item.style.top = `${calcHeight(endDate, END)}px`;
+
+            if (startDate.getTime() > NOW.getTime()) {
+              item.style.opacity = "0.33";
+            }
+
+            const topPct =
+              (endDate.getTime() - START.getTime()) /
+              (END.getTime() - START.getTime());
+            const bottomPct =
+              (startDate.getTime() - START.getTime()) /
+              (END.getTime() - START.getTime());
+
+            const stops = [
+              `rgba(${COLORS[key]}, ${topPct})`,
+              `rgba(${COLORS[key]}, ${bottomPct})`,
+            ];
+
+            if (endDate.getTime() > NOW.getTime()) {
+              const futurePct =
+                1 -
+                (endDate.getTime() - NOW.getTime()) /
+                  (END.getTime() - NOW.getTime());
+
+              stops.unshift(`rgba(${COLORS[key]}, ${futurePct})`);
+            }
+
+            const gradient = `linear-gradient(to bottom, ${stops.join(",")})`;
+
+            const mark = document.createElement("mark");
+
+            mark.style.background = gradient;
+
+            item.appendChild(mark);
+          }
+        });
+      };
+
+      size("software");
+      size("teaching");
+      size("projects");
+
+      const hrNow = document.querySelector("hr#now");
+
+      hrNow.style.top = `${calcHeight(NOW, END)}px`;
+
+      const a = document.querySelector("aside");
+
+      a.style.top = `${calcHeight(NOW, END) + 4}px`;
+
+      Array.from(document.querySelectorAll("hr")).forEach((hr, itemIdx) => {
+        const { date } = hr.dataset;
+
+        if (date) {
+          const d = new Date(date);
+
+          hr.style.top = `${calcHeight(d, END)}px`;
+
+          const as = document.createElement("aside");
+
+          as.style.top = `${calcHeight(d, END)}px`;
+          as.innerHTML = (d.getFullYear() + 1).toString().slice(2);
+
+          hr.parentNode.insertBefore(as, hr);
+        }
+      });
+    </script>
+  </body>
+</html>
