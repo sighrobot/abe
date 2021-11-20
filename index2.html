@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <title>Abe Rubenstein</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@sighrobot" />
+    <meta
+      name="twitter:description"
+      content="Abe Rubenstein is a software engineer and educator in NYC."
+    />
+    <meta name="twitter:image" content="https://abe.sh/home.png" />
+    <meta name="twitter:site" content="@sighrobot" />
+    <meta name="twitter:title" content="Abe Rubenstein" />
+    <meta name="og:image" content="https://abe.sh/home.png" />
+    <meta name="og:title" content="Abe Rubenstein" />
+    <meta name="og:url" content="https://abe.sh/" />
+    <meta
+      name="og:description"
+      content="Abe Rubenstein is a software engineer and educator in NYC."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="canonical" href="https://abe.sh/" />
+    <link
+      type="image/x-icon"
+      rel="shortcut icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABfUlEQVR4Xu3cgQnDMBDFUN+OWcOTZchkjQenTiAkf3BC2zl9KAND0QRzCoIdgoIUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC1EC3Lf58OYVuO0ECx/QQqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxjO9K0Tq0hBrB79by/WoyAF0QxgPF17C4IZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKe3vQXBDGA4LUQLgvGsx+mWhR2BghQEM4DhtJCCYAYwnBZSEMwAhtODYUEwAxhOCykIZgDDaSFaEIxnPU7PIdgRKEhBMAMYTgvRgvQbQ6tI116rxylIQTADGE4LKQhmAMNpIQXBDGA4P1IALlbUwQsGAAAAAElFTkSuQmCC"
+    />
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      body {
+        color: white;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        font-weight: 200;
+        letter-spacing: 0.25px;
+        font-size: 13px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      h1 > span:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      h1 {
+        user-select: none;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 20px 10px;
+        /* position: sticky; */
+        /* top: 0; */
+        -webkit-tap-highlight-color: transparent;
+        transition: 200ms ease text-shadow;
+        align-items: center;
+        display: flex;
+        background: rgba(0, 0, 0, 0.1);
+        background: #16161d;
+      }
+
+      footer {
+        padding: 0;
+        line-height: normal;
+        padding: 0 10px;
+        /* margin-top: 36px; */
+        /* margin-bottom: 10px; */
+        height: 36px;
+        /* text-align: right; */
+        background: slateblue;
+        display: flex;
+        align-items: center;
+      }
+
+      footer strong {
+        font-weight: normal;
+      }
+
+      h2 {
+        background: rgba(0, 0, 0, 0.05);
+        font-size: 10px;
+        font-weight: 200;
+        padding: 5px 20px;
+        line-height: 1;
+        display: none;
+      }
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: inherit;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        justify-content: flex-start;
+        width: 100%;
+      }
+
+      main {
+        padding: 36px 0;
+      }
+
+      li {
+        padding: 10px 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        line-height: normal;
+      }
+
+      li > span {
+        position: relative;
+        z-index: 1;
+        /* background: royalblue; */
+        /* padding: 5px;
+        margin: -5px; */
+      }
+
+      /* li > span span,
+      li > span a {
+        display: block;
+      } */
+
+      li.active mark {
+        /* background: white; */
+      }
+
+      li:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      li:hover mark,
+      mark:hover {
+        background: white;
+      }
+
+      mark {
+        position: absolute;
+        height: 3px;
+        top: calc(50%-2px);
+        /* bottom: 0; */
+        display: block;
+        min-width: 3px;
+        background: rgba(255, 255, 255, 0.125);
+        transition: 200ms ease background;
+      }
+    </style>
+  </head>
+  <body
+    itemscope=""
+    itemtype="http://schema.org/Person"
+    style="background: royalblue"
+  >
+    <header>
+      <h1>
+        <span onclick="favicon(color())">
+          <span itemprop="givenName">Abe</span>
+          <span itemprop="familyName">Rubenstein</span>
+        </span>
+      </h1>
+    </header>
+
+    <main>
+      <ul>
+        <h2>2021</h2>
+        <li class="active" data-start="2021-03-06">
+          <span>
+            <a href="https://grex.es/" target="_blank">Orchidex</a>
+          </span>
+        </li>
+
+        <h2>2020</h2>
+
+        <li data-start="2020-08-31" data-end="2020-12-14">
+          <span>
+            Part-Time Faculty
+            <a
+              href="https://courses.newschool.edu/courses/PSAM5170/"
+              target="_blank"
+              >Parsons</a
+            >
+          </span>
+        </li>
+
+        <li data-start="2020-02-16" data-end="2020-03-11">
+          <span>
+            <a href="https://2020.datathroughdesign.com/2020" target="_blank"
+              >Almost Everywhere</a
+            >
+          </span>
+        </li>
+
+        <h2>2019</h2>
+
+        <li class="active" data-start="2019-10-07">
+          <span>
+            Software Engineer, Dataviz
+            <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+          </span>
+        </li>
+
+        <li data-start="2019-09-01" data-end="2019-09-28">
+          <span>
+            <a
+              href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+              target="_blank"
+              >You Are Here</a
+            >
+          </span>
+        </li>
+
+        <li data-start="2019-01-27" data-end="2019-01-27">
+          <span>
+            <a href="/plotbox/" target="_blank">Plotbox</a>
+          </span>
+        </li>
+
+        <h2>2018</h2>
+
+        <li data-start="2018-09-01" data-end="2019-10-14">
+          <span>
+            Lecturer
+            <a href="https://commons.pratt.edu/savi/" target="_blank"
+              >Pratt SAVI</a
+            >
+          </span>
+        </li>
+
+        <li data-start="2018-05-30">
+          <span>
+            <a href="https://publicdata.today/" target="_blank"
+              >Today in Public Data</a
+            >
+          </span>
+        </li>
+
+        <li data-start="2018-01-16" data-end="2018-01-17">
+          <span>
+            Visiting Critic
+            <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
+          </span>
+        </li>
+
+        <h2>2017</h2>
+
+        <h2>2016</h2>
+
+        <li data-start="2016-01-20" data-end="2016-12-18">
+          <span>
+            Adjunct Faculty
+            <a href="https://cs.nyu.edu/home/index.html" target="_blank"
+              >Courant</a
+            >
+          </span>
+        </li>
+
+        <h2>2015</h2>
+
+        <li data-start="2015-11-07" data-end="2017-02-01">
+          <span>
+            <a href="https://boundless.js.org/" target="_blank">Boundless</a>
+          </span>
+        </li>
+
+        <li data-start="2015-07-20" data-end="2019-07-20">
+          <span>
+            <span>Senior Software Engineer</span>
+            <a href="https://enigma.com/" target="_blank">Enigma</a>
+          </span>
+        </li>
+
+        <!-- <li><a href="/progression/" target="_blank">Progression</a></li> -->
+
+        <li data-start="2015-06-10" data-end="2015-06-10">
+          <span
+            >Beautiful, Intriguing, and Illegal Ways to Map the Internet
+            <a href="https://www.wired.com/2015/06/mapping-the-internet/"
+              >WIRED</a
+            ></span
+          >
+        </li>
+        <li data-start="2015-02-14" data-end="2015-02-14">
+          <span>
+            <a href="https://dev.abe.sh/block-chords/" target="_blank"
+              >Block Chords</a
+            >
+          </span>
+        </li>
+        <li data-start="2014-12-09" data-end="2015-05-15">
+          <span>
+            <a href="https://expl.re/" target="_blank"
+              >Internaut Explorer</a
+            ></span
+          >
+        </li>
+
+        <li data-start="2013-09-01" data-end="2015-05-01">
+          <span>
+            Graduate Student
+            <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
+          </span>
+        </li>
+
+        <!-- <li>
+          I'm Feeling Curious
+          <a
+            href="https://www.meetup.com/UX-Data/events/254638995/"
+            target="_blank"
+            >UX + Data</a
+          >
+        </li>
+        <li>
+          Public Data Using Next.js
+          <a
+            href="https://www.meetup.com/ReactNYC/events/251044227/"
+            target="_blank"
+            >ReactNYC</a
+          >
+        </li>
+        <li>
+          Total Eclipse of the Heartland
+          <a
+            href="https://www.meetup.com/geonyc/events/241643293/"
+            target="_blank"
+            >GeoNYC</a
+          >
+        </li>
+
+        <li>
+          Best of the Visualisation Web
+          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
+            >Visualising Data</a
+          >
+        </li> -->
+      </ul>
+    </main>
+    <footer><strong>sighrobot</strong>&nbsp;at gmail et al.</footer>
+
+    <script>
+      const P = 1;
+
+      // https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+      function fibonacci(num, memo) {
+        memo = memo || {};
+
+        if (memo[num]) return memo[num];
+        if (num <= 1) return 1;
+
+        return (memo[num] =
+          fibonacci(num - 1, memo) + fibonacci(num - 2, memo));
+      }
+
+      function isDark() {
+        return (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+      }
+
+      function size() {
+        const sections = document.querySelectorAll("header > *");
+
+        for (let i = 0; i < sections.length; i++) {
+          const section = sections[i];
+          const fib = fibonacci(i);
+
+          section.style.height =
+            i === 0 ? "1px" : (fib / 100) * window.innerHeight * P + "px";
+
+          if (i < sections.length - 1) {
+            section.style.marginBottom =
+              (fibonacci(sections.length + 2 - i) / 100) *
+                window.innerHeight *
+                P +
+              "px";
+          }
+        }
+      }
+
+      function graph() {
+        const now = new Date().getTime();
+        const then = new Date("2013-09-01").getTime();
+        const lis = document.querySelectorAll("li");
+
+        for (let i = 0; i < lis.length; i++) {
+          const li = lis[i];
+          const dataStart = li.getAttribute("data-start");
+
+          if (dataStart) {
+            const line = document.createElement("mark");
+            const start = new Date(dataStart).getTime();
+            const dataEnd = li.getAttribute("data-end");
+            const end = dataEnd ? new Date(dataEnd).getTime() : now;
+
+            line.style.width = `${((end - start) / (now - then)) * 100}%`;
+            line.style.left = `${((start - then) / (now - then)) * 100}%`;
+
+            li.appendChild(line);
+          }
+        }
+      }
+
+      function color() {
+        const sections = document.querySelectorAll("header > *");
+        const dark = isDark();
+        const HS = [
+          Math.floor(Math.random() * 360),
+          `${Math.floor(Math.random() * 100)}%`,
+        ];
+
+        for (let i = 0; i < sections.length; i++) {
+          const section = sections[i];
+          const L =
+            ((dark ? i / 3 : sections.length - i) / sections.length) * 100 +
+            "%";
+
+          // section.style.background = `hsl(${[...HS, L].join(",")})`;
+        }
+
+        const L =
+          ((isDark() ? sections.length / 3 : 0.75) / sections.length) * 100 +
+          "%";
+
+        document.body.style.background = `hsl(${[...HS, L].join(",")})`;
+
+        const spans = document.querySelectorAll("li > span");
+
+        for (let i = 0; i < spans.length; i++) {
+          const span = spans[i];
+
+          span.style.background = `hsl(${[...HS, L].join(",")})`;
+        }
+
+        return `hsl(${[...HS, "50%"].join(",")})`;
+      }
+
+      function favicon(color) {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 100;
+        canvas.height = 100;
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 34, canvas.width, 1);
+        ctx.fillRect(0, 56, canvas.width, 2);
+        ctx.fillRect(0, 71, canvas.width, 3);
+        ctx.fillRect(0, 82, canvas.width, 5);
+        ctx.fillRect(0, 92, canvas.width, 8);
+
+        const oldLink = document.querySelector("link[rel*='icon']");
+
+        if (oldLink) {
+          document.head.removeChild(oldLink);
+        }
+
+        const link = document.createElement("link");
+
+        link.type = "image/x-icon";
+        link.rel = "shortcut icon";
+        link.href = canvas.toDataURL("image/png");
+
+        document.getElementsByTagName("head")[0].appendChild(link);
+      }
+
+      // size();
+      // favicon(color());
+      graph();
+    </script>
+  </body>
+</html>
