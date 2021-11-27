@@ -37,12 +37,11 @@
       }
 
       body {
-        color: white;
-        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
         margin: 0;
         font-weight: 200;
         letter-spacing: 0.25px;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       a {
@@ -55,32 +54,67 @@
         cursor: pointer;
       }
 
+      header {
+        background: #ccc;
+        height: calc(100vh - 15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        z-index: 45;
+      }
+
       h1 {
+        position: relative;
         user-select: none;
         margin: 0;
         text-transform: uppercase;
-        font-size: inherit;
+        font-size: 16px;
         font-weight: 400;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
+        padding: 0 10px;
+        height: 64px;
+
         -webkit-tap-highlight-color: transparent;
-        transition: 200ms ease text-shadow;
         align-items: center;
         display: flex;
+        background: linear-gradient(
+          to bottom,
+          #16161d,
+          /* rgba(128, 128, 0, 0.5), */ royalblue
+        );
+        background: #16161d;
+        /* color: white; */
       }
 
       footer {
         padding: 0;
         line-height: normal;
-        padding: 0 20px;
-        margin-top: 50px;
-        margin-bottom: 10px;
-        /* text-align: right; */
+        padding: 15px 10px;
+        background: white;
+        text-align: right;
+        position: relative;
+        z-index: 2;
       }
 
       footer strong {
         font-weight: normal;
+      }
+
+      h2 {
+        background: rgba(0, 255, 0, 0.05);
+        background: linear-gradient(to right, #16161d, transparent);
+        background: #16161d;
+        /* position: sticky; */
+        /* top: 58px; */
+        color: white;
+        font-size: 10px;
+        font-weight: 400;
+        padding: 0 10px;
+        height: 1px;
+        line-height: 1;
+        margin: 0;
+        text-transform: uppercase;
+        /* display: none; */
       }
 
       h3 {
@@ -97,74 +131,113 @@
         margin: 0;
         justify-content: flex-start;
         width: 100%;
-        margin-top: ;
-      }
-
-      ul + ul {
-        margin-top: 40px;
-      }
-
-      main {
-        padding: 20px 0;
-      }
-
-      header {
-        background: white;
       }
 
       li {
-        padding: 10px 20px;
+        padding: 15px 10px;
         position: relative;
         display: flex;
         align-items: center;
         line-height: normal;
       }
 
-      li span {
+      li > span {
         position: relative;
         z-index: 1;
+        /* background: royalblue; */
+        /* padding: 5px;
+        margin: -5px; */
       }
 
-      li.active {
-        box-shadow: inset 5px 0 white;
+      li:hover {
+        background: rgba(0, 0, 0, 0.025);
       }
 
       li:hover mark,
       mark:hover {
-        background: white;
+        border: 1px solid #16161d;
       }
 
       mark {
         position: absolute;
-        height: 8px;
+        /* height: 8px; */
+        /* top: calc(50%-2px); */
+        top: 20%;
+        bottom: 20%;
         display: block;
-        display: none;
-        min-width: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        background: none;
-        transition: 200ms background ease;
+        min-width: 10px;
+        background: rgba(0, 0, 0, 0.1);
       }
 
-      @media (max-width: 768px) {
-        /* h1,
-        main {
-          padding: 20px 10px;
-        } */
+      #axis {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 23;
+        height: 15px;
+      }
+
+      #axis span {
+        position: absolute;
+        font-size: 10px;
+        transform: translate(-5px, 0.5px);
+      }
+
+      aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* z-index: 0; */
+      }
+
+      aside hr {
+        width: 1px;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
       }
 
       @media (prefers-color-scheme: dark) {
         body {
-          /* color: black; */
+          color: white;
         }
+
         header {
-          background: black;
+          background: #16161d;
         }
 
         mark {
-          background: rgba(0, 0, 0, 0.05);
+          background: rgba(255, 255, 255, 0.125);
         }
-        li.active {
-          /* box-shadow: inset 5px 0 black; */
+
+        aside hr {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        #axis {
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        li:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        li:hover mark,
+        mark:hover {
+          /* background: #16161d; */
+          border: 1px solid white;
+        }
+
+        footer {
+          background: #16161d;
+          color: white;
         }
       }
     </style>
@@ -172,44 +245,40 @@
   <body
     itemscope=""
     itemtype="http://schema.org/Person"
-    style="background: rgb(87, 137, 67)"
+    style="background: royalblue"
   >
     <header>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-
       <h1>
-        <span onclick="favicon(color())">
+        <span onclick="foo(favicon(color()))">
           <span itemprop="givenName">Abe</span>
           <span itemprop="familyName">Rubenstein</span>
         </span>
       </h1>
     </header>
 
+    <div id="axis"></div>
+
+    <aside></aside>
+
     <main>
       <ul>
-        <li class="active" data-start="2019-10-07">
+        <li class="active" data-start="2021-03-06">
           <span>
-            Software Engineer, Dataviz
-            <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+            Web App<br />
+            <a href="https://grex.es/" target="_blank">Orchidex</a>
           </span>
         </li>
 
-        <li data-start="2015-07-20" data-end="2019-07-20">
+        <li data-start="2021-01-17" data-end="2021-05-30">
           <span>
-            Senior Software Engineer
-            <a href="https://enigma.com/" target="_blank">Enigma</a>
+            Web App<br />
+            <a href="https://jca-mc.vercel.app/" target="_blank">Minegraphed</a>
           </span>
         </li>
-      </ul>
 
-      <ul>
         <li data-start="2020-08-31" data-end="2020-12-14">
           <span>
-            Part-Time Faculty
+            Part-Time Faculty<br />
             <a
               href="https://courses.newschool.edu/courses/PSAM5170/"
               target="_blank"
@@ -218,50 +287,25 @@
           </span>
         </li>
 
-        <li data-start="2018-09-01" data-end="2019-10-14">
+        <li data-start="2020-02-16" data-end="2020-02-16">
           <span>
-            Lecturer
-            <a href="https://commons.pratt.edu/savi/" target="_blank"
-              >Pratt SAVI</a
-            >
-          </span>
-        </li>
-
-        <li data-start="2018-01-16" data-end="2018-01-17">
-          <span>
-            Visiting Critic
-            <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
-          </span>
-        </li>
-
-        <li data-start="2016-01-20" data-end="2016-12-18">
-          <span>
-            Adjunct Faculty
-            <a href="https://cs.nyu.edu/home/index.html" target="_blank"
-              >Courant</a
-            >
-          </span>
-        </li>
-
-        <li data-start="2013-09-01" data-end="2015-05-01">
-          <span>
-            Graduate Student
-            <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
-          </span>
-        </li>
-      </ul>
-
-      <ul>
-        <li data-start="2020-02-16" data-end="2020-03-11">
-          <span>
+            Almost Everywhere<br />
             <a href="https://2020.datathroughdesign.com/2020" target="_blank"
-              >Almost Everywhere</a
+              >Data Through Design</a
             >
           </span>
         </li>
 
-        <li data-start="2019-09-01" data-end="2019-09-28">
+        <li class="active" data-start="2019-10-07">
           <span>
+            Software Engineer, Data Visualization<br />
+            <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+          </span>
+        </li>
+
+        <li data-start="2019-09-01" data-end="2019-09-01">
+          <span>
+            Chrome Extension<br />
             <a
               href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
               target="_blank"
@@ -269,40 +313,115 @@
             >
           </span>
         </li>
-        <!-- <li data-start="2019-01-27" data-end="2019-01-27">
+
+        <li data-start="2018-09-01" data-end="2019-10-14">
           <span>
-            <a href="/plotbox/" target="_blank">Plotbox</a>
+            Lecturer<br />
+            <a href="https://commons.pratt.edu/savi/" target="_blank"
+              >Pratt SAVI</a
+            >
           </span>
-        </li> -->
-        <li data-start="2018-05-30" data-end="2020-03-30">
+        </li>
+
+        <li data-start="2018-05-30" data-end="2018-05-30">
           <span>
+            Web App<br />
             <a href="https://publicdata.today/" target="_blank"
               >Today in Public Data</a
             >
           </span>
         </li>
 
+        <li data-start="2018-01-16" data-end="2018-01-17">
+          <span>
+            Visiting Critic<br />
+            <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
+          </span>
+        </li>
+
         <!-- <li data-start="2015-11-07" data-end="2017-02-01">
           <span>
-            <a href="https://enigma.com/" target="_blank">Boundless</a>
+            <a href="https://boundless.js.org/" target="_blank">Boundless</a>
           </span>
         </li> -->
 
-        <!-- <li><a href="/progression/" target="_blank">Progression</a></li> -->
-        <li data-start="2015-02-14" data-end="2015-02-14">
+        <li data-start="2016-01-20" data-end="2016-12-18">
           <span>
+            Adjunct Faculty<br />
+            <a href="https://cs.nyu.edu/home/index.html" target="_blank"
+              >Courant Institute</a
+            >
+          </span>
+        </li>
+
+        <li data-start="2015-07-20" data-end="2019-07-20">
+          <span>
+            <span>Senior Software Engineer</span><br />
+            <a href="https://enigma.com/" target="_blank">Enigma</a>
+          </span>
+        </li>
+
+        <!-- <li data-start="2015-06-10" data-end="2015-06-10">
+          <span
+            >Beautiful [&hellip;] Ways to Map the Internet<br />
+            <a href="https://www.wired.com/2015/06/mapping-the-internet/"
+              >WIRED</a
+            ></span
+          >
+        </li> -->
+
+        <!-- <li data-start="2015-05-01" data-end="2015-05-01">
+          <span
+            >Best of the Visualisation Web<br />
+            <a
+              href="https://www.visualisingdata.com/2015/07/best-of-the-visualisation-web-may-2015/"
+              >Visualising Data</a
+            >
+          </span>
+        </li> -->
+
+        <li data-start="2015-05-15" data-end="2015-05-15">
+          <span
+            >Web App<br />
+            <a href="https://expl.re/" target="_blank"
+              >Internaut Explorer</a
+            ></span
+          >
+        </li>
+
+        <li data-start="2015-02-14" data-end="2015-02-14">
+          <span
+            >Web App<br />
             <a href="https://dev.abe.sh/block-chords/" target="_blank"
               >Block Chords</a
             >
           </span>
         </li>
-        <li data-start="2014-12-09" data-end="2015-05-15">
-          <span
-            ><a href="https://expl.re/" target="_blank"
-              >Internaut Explorer</a
-            ></span
-          >
+
+        <!-- <li data-start="2014-03-04" data-end="2014-06-20">
+          <span>
+            Android&trade; App<br />
+            <a
+              href="https://play.google.com/store/apps/details?id=com.abe.moon&hl=en&gl=US"
+              target="_blank"
+              >Moon</a
+            >
+          </span>
+        </li> -->
+
+        <li data-start="2013-09-01" data-end="2015-05-15">
+          <span>
+            Graduate Student<br />
+            <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
+          </span>
         </li>
+
+        <!-- <li data-start="2013-03-26" data-end="2014-06-03">
+          <span
+            >Web App<br />
+            <a href="https://abe.sh/madbus/#/" target="_blank">Madbus</a>
+          </span>
+        </li> -->
 
         <!-- <li>
           I'm Feeling Curious
@@ -328,25 +447,20 @@
             >GeoNYC</a
           >
         </li>
-        <li>
-          Beautiful, Intriguing, and Illegal Ways to Map the Internet
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >WIRED</a
-          >
-        </li>
-        <li>
-          Best of the Visualisation Web
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >Visualising Data</a
-          >
-        </li> -->
+        -->
       </ul>
-
-      <footer><strong>sighrobot</strong> at gmail et al.</footer>
     </main>
+    <footer><strong>sighrobot</strong>&nbsp;at gmail</footer>
 
     <script>
       const P = 1;
+
+      function foo() {
+        window.scrollTo({
+          top: window.innerHeight - 64 - 15,
+          behavior: "smooth",
+        });
+      }
 
       // https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
       function fibonacci(num, memo) {
@@ -362,43 +476,43 @@
       function isDark() {
         return (
           window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
+          window.matchMedia("(prefers-color-scheme: dark)").matches
         );
       }
 
       function size() {
-        const sections = document.querySelectorAll('header > *');
+        const sections = document.querySelectorAll(
+          "h1 > span:not(:first-child)"
+        );
+
+        console.log(sections);
 
         for (let i = 0; i < sections.length; i++) {
           const section = sections[i];
           const fib = fibonacci(i);
 
-          section.style.height =
-            i === 0 ? '1px' : (fib / 100) * window.innerHeight * P + 'px';
+          section.style.width = i === 0 ? "1vw" : (fib / 100) * 100 * P + "vw";
 
           if (i < sections.length - 1) {
-            section.style.marginBottom =
-              (fibonacci(sections.length + 2 - i) / 100) *
-                window.innerHeight *
-                P +
-              'px';
+            section.style.left =
+              (fibonacci(sections.length + 2 - i) / 100) * 100 * P + "vw";
           }
         }
       }
 
       function graph() {
         const now = new Date().getTime();
-        const then = new Date('2013-09-01').getTime();
-        const lis = document.querySelectorAll('li');
+        const then = new Date("2013-09-01").getTime();
+        const lis = document.querySelectorAll("li");
 
         for (let i = 0; i < lis.length; i++) {
           const li = lis[i];
-          const dataStart = li.getAttribute('data-start');
+          const dataStart = li.getAttribute("data-start");
 
           if (dataStart) {
-            const line = document.createElement('mark');
+            const line = document.createElement("mark");
             const start = new Date(dataStart).getTime();
-            const dataEnd = li.getAttribute('data-end');
+            const dataEnd = li.getAttribute("data-end");
             const end = dataEnd ? new Date(dataEnd).getTime() : now;
 
             line.style.width = `${((end - start) / (now - then)) * 100}%`;
@@ -407,10 +521,26 @@
             li.appendChild(line);
           }
         }
+
+        const aside = document.querySelector("aside");
+        const axis = document.getElementById("axis");
+
+        for (let i = 2014; i < 2022; i++) {
+          const tick = document.createElement("span");
+          tick.innerText = i.toString().slice(2, 4);
+          const line = document.createElement("hr");
+          const date = new Date(`${i}-01-01`).getTime();
+
+          line.style.left = `${((date - then) / (now - then)) * 100}%`;
+          tick.style.left = `${((date - then) / (now - then)) * 100}%`;
+
+          aside.appendChild(line);
+          axis.appendChild(tick);
+        }
       }
 
       function color() {
-        const sections = document.querySelectorAll('header > *');
+        const sections = document.querySelectorAll("header > *");
         const dark = isDark();
         const HS = [
           Math.floor(Math.random() * 360),
@@ -421,31 +551,31 @@
           const section = sections[i];
           const L =
             ((dark ? i / 3 : sections.length - i) / sections.length) * 100 +
-            '%';
+            "%";
 
-          section.style.background = `hsl(${[...HS, L].join(',')})`;
+          section.style.background = `hsl(${[...HS, L].join(",")})`;
         }
 
         const L =
           ((isDark() ? sections.length / 3 : 0.75) / sections.length) * 100 +
-          '%';
+          "%";
 
-        document.body.style.background = `hsl(${[...HS, L].join(',')})`;
+        document.body.style.background = `hsl(${[...HS, L].join(",")})`;
 
-        const spans = document.querySelectorAll('li > span');
+        const spans = document.querySelectorAll("li > span");
 
         for (let i = 0; i < spans.length; i++) {
           const span = spans[i];
 
-          span.style.background = `hsl(${[...HS, L].join(',')})`;
+          // span.style.background = `hsl(${[...HS, L].join(",")})`;
         }
 
-        return `hsl(${[...HS, '50%'].join(',')})`;
+        return `hsl(${[...HS, "50%"].join(",")})`;
       }
 
       function favicon(color) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
         canvas.width = 100;
         canvas.height = 100;
@@ -462,16 +592,16 @@
           document.head.removeChild(oldLink);
         }
 
-        const link = document.createElement('link');
+        const link = document.createElement("link");
 
-        link.type = 'image/x-icon';
-        link.rel = 'shortcut icon';
-        link.href = canvas.toDataURL('image/png');
+        link.type = "image/x-icon";
+        link.rel = "shortcut icon";
+        link.href = canvas.toDataURL("image/png");
 
-        document.getElementsByTagName('head')[0].appendChild(link);
+        document.getElementsByTagName("head")[0].appendChild(link);
       }
 
-      size();
+      // size();
       favicon(color());
       graph();
     </script>
