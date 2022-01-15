@@ -262,7 +262,7 @@
 
     <main>
       <ul>
-        <li class="active" data-start="2021-03-06">
+        <!-- <li class="active" data-start="2021-03-06">
           <span>
             Web App<br />
             <a href="https://grex.es/" target="_blank">Orchidex</a>
@@ -274,7 +274,7 @@
             Web App<br />
             <a href="https://jca-mc.vercel.app/" target="_blank">Minegraphed</a>
           </span>
-        </li>
+        </li> -->
 
         <li data-start="2020-08-31" data-end="2020-12-14">
           <span>
@@ -287,14 +287,14 @@
           </span>
         </li>
 
-        <li data-start="2020-02-16" data-end="2020-02-16">
+        <!-- <li data-start="2020-02-16" data-end="2020-02-16">
           <span>
             Almost Everywhere<br />
             <a href="https://2020.datathroughdesign.com/2020" target="_blank"
               >Data Through Design</a
             >
           </span>
-        </li>
+        </li> -->
 
         <li class="active" data-start="2019-10-07">
           <span>
@@ -303,7 +303,7 @@
           </span>
         </li>
 
-        <li data-start="2019-09-01" data-end="2019-09-01">
+        <!-- <li data-start="2019-09-01" data-end="2019-09-01">
           <span>
             Chrome Extension<br />
             <a
@@ -312,7 +312,7 @@
               >You Are Here</a
             >
           </span>
-        </li>
+        </li> -->
 
         <li data-start="2018-09-01" data-end="2019-10-14">
           <span>
@@ -322,7 +322,7 @@
             >
           </span>
         </li>
-
+        <!--
         <li data-start="2018-05-30" data-end="2018-05-30">
           <span>
             Web App<br />
@@ -330,7 +330,7 @@
               >Today in Public Data</a
             >
           </span>
-        </li>
+        </li> -->
 
         <li data-start="2018-01-16" data-end="2018-01-17">
           <span>
@@ -380,23 +380,23 @@
           </span>
         </li> -->
 
-        <li data-start="2015-05-15" data-end="2015-05-15">
+        <!-- <li data-start="2015-05-15" data-end="2015-05-15">
           <span
             >Web App<br />
             <a href="https://expl.re/" target="_blank"
               >Internaut Explorer</a
             ></span
           >
-        </li>
+        </li> -->
 
-        <li data-start="2015-02-14" data-end="2015-02-14">
+        <!-- <li data-start="2015-02-14" data-end="2015-02-14">
           <span
             >Web App<br />
             <a href="https://dev.abe.sh/block-chords/" target="_blank"
               >Block Chords</a
             >
           </span>
-        </li>
+        </li> -->
 
         <!-- <li data-start="2014-03-04" data-end="2014-06-20">
           <span>
@@ -504,6 +504,7 @@
         const now = new Date().getTime();
         const then = new Date("2013-09-01").getTime();
         const lis = document.querySelectorAll("li");
+        const barColorString = isDark() ? "255, 255, 255" : "0, 0, 0";
 
         for (let i = 0; i < lis.length; i++) {
           const li = lis[i];
@@ -515,6 +516,11 @@
             const dataEnd = li.getAttribute("data-end");
             const end = dataEnd ? new Date(dataEnd).getTime() : now;
 
+            line.style.background = `linear-gradient(to right, rgba(${barColorString}, ${
+              ((start - then) / (now - then)) * 0.33
+            }), rgba(${barColorString}, ${
+              ((end - then) / (now - then)) * 0.33
+            }))`;
             line.style.width = `${((end - start) / (now - then)) * 100}%`;
             line.style.left = `${((start - then) / (now - then)) * 100}%`;
 
