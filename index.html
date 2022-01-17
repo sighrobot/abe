@@ -30,6 +30,20 @@
       href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABfUlEQVR4Xu3cgQnDMBDFUN+OWcOTZchkjQenTiAkf3BC2zl9KAND0QRzCoIdgoIUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC1EC3Lf58OYVuO0ECx/QQqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxjO9K0Tq0hBrB79by/WoyAF0QxgPF17C4IZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKe3vQXBDGA4LUQLgvGsx+mWhR2BghQEM4DhtJCCYAYwnBZSEMwAhtODYUEwAxhOCykIZgDDaSFaEIxnPU7PIdgRKEhBMAMYTgvRgvQbQ6tI116rxylIQTADGE4LKQhmAMNpIQXBDGA4P1IALlbUwQsGAAAAAElFTkSuQmCC"
     />
     <style>
+      @font-face {
+        font-family: "tex";
+        src: url("./cmb10.woff") format("woff");
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "tex";
+        src: url("./cmr12.woff") format("woff");
+        font-weight: regular;
+        font-style: normal;
+      }
+
       *,
       *:before,
       *:after {
@@ -37,274 +51,283 @@
       }
 
       body {
-        color: white;
-        font-family: 'Helvetica Neue', Helvetica, sans-serif;
-        margin: 0;
-        font-weight: 200;
-        letter-spacing: 0.25px;
-        font-size: 16px;
+        font-family: "tex", Helvetica, sans-serif;
+        font-size: 17px;
+        margin: 0 10px;
       }
 
       a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: 400;
+        /* color: inherit; */
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        padding: 2.5px 0;
+      }
+      li + li {
+        margin-top: 10px;
+      }
+
+      li > ul {
+        margin-top: 5px;
+        padding-left: 20px;
+      }
+
+      li > ul > li {
+        margin: 0;
       }
 
       h1 > span:hover {
         cursor: pointer;
       }
 
-      h1 {
-        user-select: none;
-        margin: 0;
-        text-transform: uppercase;
-        font-size: inherit;
-        font-weight: 400;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
-        -webkit-tap-highlight-color: transparent;
-        transition: 200ms ease text-shadow;
-        align-items: center;
-        display: flex;
-      }
-
       footer {
         padding: 0;
         line-height: normal;
-        padding: 0 20px;
-        margin-top: 50px;
-        margin-bottom: 10px;
-        /* text-align: right; */
-      }
-
-      footer strong {
-        font-weight: normal;
-      }
-
-      h3 {
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: inherit;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        justify-content: flex-start;
-        width: 100%;
-        margin-top: ;
-      }
-
-      ul + ul {
-        margin-top: 40px;
-      }
-
-      main {
-        padding: 20px 0;
-      }
-
-      header {
+        padding: 15px 10px;
         background: white;
-      }
-
-      li {
-        padding: 10px 20px;
+        text-align: right;
         position: relative;
-        display: flex;
-        align-items: center;
-        line-height: normal;
+        z-index: 2;
       }
 
-      li span {
-        position: relative;
-        z-index: 1;
-      }
-
-      li.active {
-        box-shadow: inset 5px 0 white;
-      }
-
-      li:hover mark,
-      mark:hover {
-        background: white;
-      }
-
-      mark {
-        position: absolute;
-        height: 8px;
-        display: block;
-        display: none;
-        min-width: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        background: none;
-        transition: 200ms background ease;
-      }
-
-      @media (max-width: 768px) {
-        /* h1,
-        main {
-          padding: 20px 10px;
-        } */
+      td + td {
+        padding-left: 20px;
       }
 
       @media (prefers-color-scheme: dark) {
         body {
-          /* color: black; */
-        }
-        header {
-          background: black;
-        }
-
-        mark {
-          background: rgba(0, 0, 0, 0.05);
-        }
-        li.active {
-          /* box-shadow: inset 5px 0 black; */
+          background: #16161d;
+          color: white;
         }
       }
     </style>
   </head>
-  <body
-    itemscope=""
-    itemtype="http://schema.org/Person"
-    style="background: rgb(87, 137, 67)"
-  >
-    <header>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <body itemscope="" itemtype="http://schema.org/Person">
+    <h1>Abe Rubenstein</h1>
 
-      <h1>
-        <span onclick="favicon(color())">
-          <span itemprop="givenName">Abe</span>
-          <span itemprop="familyName">Rubenstein</span>
+    <section>
+      <h2>Teaching</h2>
+      <ul>
+        <li>
+          <strong>Part-Time Faculty</strong>, Parsons School of Design, The New
+          School
+          <ul>
+            <li>
+              <a href="https://courses.newschool.edu/courses/PSAM5170/"
+                >Data as Material</a
+              >
+              – Fall 2020
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Lecturer</strong>, Spatial Analysis &amp; Visualization
+          Initiative (SAVI), Pratt Institute
+
+          <ul>
+            <li>
+              <a
+                href="https://www.enrole.com/prattscps/jsp/course.jsp?categoryId=49FECED8&courseId=XSAVI-700"
+                >Foundations: Data, Design &amp; Spatial Thinking</a
+              >
+              – Fall 2018, Spring 2019, Fall 2019
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Visiting Critic</strong>, Rhode Island School of Design (RISD)
+          <ul>
+            <li>
+              <a
+                href="https://ctc.risd.edu/course-listing/2022-courses#introduction-to-computation"
+                >Introduction to Computation</a
+              >
+              – Wintersession 2018
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Adjunct Faculty</strong>, Courant Institute of Mathematical
+          Sciences (CIMS), New York University
+          <ul>
+            <li>
+              <a href="https://cs.nyu.edu/dynamic/courses/catalog/level/UA/"
+                >Introduction to Programming</a
+              >
+              – Spring 2016, Fall 2016
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <ul>
+      <li class="active" data-start="2021-03-06">
+        <span>
+          Web App<br />
+          <a href="https://grex.es/" target="_blank">Orchidex</a>
         </span>
-      </h1>
-    </header>
+      </li>
 
-    <main>
-      <ul>
-        <li class="active" data-start="2019-10-07">
-          <span>
-            Software Engineer, Dataviz
-            <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
-          </span>
-        </li>
+      <li data-start="2021-01-17" data-end="2021-05-30">
+        <span>
+          Web App<br />
+          <a href="https://jca-mc.vercel.app/" target="_blank">Minegraphed</a>
+        </span>
+      </li>
 
-        <li data-start="2015-07-20" data-end="2019-07-20">
-          <span>
-            Senior Software Engineer
-            <a href="https://enigma.com/" target="_blank">Enigma</a>
-          </span>
-        </li>
-      </ul>
+      <li data-start="2020-08-31" data-end="2020-12-14">
+        <span>
+          Part-Time Faculty<br />
+          <a
+            href="https://courses.newschool.edu/courses/PSAM5170/"
+            target="_blank"
+            >Parsons</a
+          >
+        </span>
+      </li>
 
-      <ul>
-        <li data-start="2020-08-31" data-end="2020-12-14">
-          <span>
-            Part-Time Faculty
-            <a
-              href="https://courses.newschool.edu/courses/PSAM5170/"
-              target="_blank"
-              >Parsons</a
-            >
-          </span>
-        </li>
+      <li data-start="2020-02-16" data-end="2020-02-16">
+        <span>
+          Almost Everywhere<br />
+          <a href="https://2020.datathroughdesign.com/2020" target="_blank"
+            >Data Through Design</a
+          >
+        </span>
+      </li>
 
-        <li data-start="2018-09-01" data-end="2019-10-14">
-          <span>
-            Lecturer
-            <a href="https://commons.pratt.edu/savi/" target="_blank"
-              >Pratt SAVI</a
-            >
-          </span>
-        </li>
+      <li class="active" data-start="2019-10-07">
+        <span>
+          Software Engineer, Data Visualization<br />
+          <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+        </span>
+      </li>
 
-        <li data-start="2018-01-16" data-end="2018-01-17">
-          <span>
-            Visiting Critic
-            <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
-          </span>
-        </li>
+      <li data-start="2019-09-01" data-end="2019-09-01">
+        <span>
+          Chrome Extension<br />
+          <a
+            href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+            target="_blank"
+            >You Are Here</a
+          >
+        </span>
+      </li>
 
-        <li data-start="2016-01-20" data-end="2016-12-18">
-          <span>
-            Adjunct Faculty
-            <a href="https://cs.nyu.edu/home/index.html" target="_blank"
-              >Courant</a
-            >
-          </span>
-        </li>
+      <li data-start="2018-09-01" data-end="2019-10-14">
+        <span>
+          Lecturer<br />
+          <a href="https://commons.pratt.edu/savi/" target="_blank"
+            >Pratt SAVI</a
+          >
+        </span>
+      </li>
 
-        <li data-start="2013-09-01" data-end="2015-05-01">
-          <span>
-            Graduate Student
-            <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
-          </span>
-        </li>
-      </ul>
+      <li data-start="2018-05-30" data-end="2018-05-30">
+        <span>
+          Web App<br />
+          <a href="https://publicdata.today/" target="_blank"
+            >Today in Public Data</a
+          >
+        </span>
+      </li>
 
-      <ul>
-        <li data-start="2020-02-16" data-end="2020-03-11">
-          <span>
-            <a href="https://2020.datathroughdesign.com/2020" target="_blank"
-              >Almost Everywhere</a
-            >
-          </span>
-        </li>
+      <li data-start="2018-01-16" data-end="2018-01-17">
+        <span>
+          Visiting Critic<br />
+          <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
+        </span>
+      </li>
 
-        <li data-start="2019-09-01" data-end="2019-09-28">
+      <!-- <li data-start="2015-11-07" data-end="2017-02-01">
           <span>
-            <a
-              href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
-              target="_blank"
-              >You Are Here</a
-            >
-          </span>
-        </li>
-        <!-- <li data-start="2019-01-27" data-end="2019-01-27">
-          <span>
-            <a href="/plotbox/" target="_blank">Plotbox</a>
-          </span>
-        </li> -->
-        <li data-start="2018-05-30" data-end="2020-03-30">
-          <span>
-            <a href="https://publicdata.today/" target="_blank"
-              >Today in Public Data</a
-            >
-          </span>
-        </li>
-
-        <!-- <li data-start="2015-11-07" data-end="2017-02-01">
-          <span>
-            <a href="https://enigma.com/" target="_blank">Boundless</a>
+            <a href="https://boundless.js.org/" target="_blank">Boundless</a>
           </span>
         </li> -->
 
-        <!-- <li><a href="/progression/" target="_blank">Progression</a></li> -->
-        <li data-start="2015-02-14" data-end="2015-02-14">
-          <span>
-            <a href="https://dev.abe.sh/block-chords/" target="_blank"
-              >Block Chords</a
-            >
-          </span>
-        </li>
-        <li data-start="2014-12-09" data-end="2015-05-15">
+      <li data-start="2016-01-20" data-end="2016-12-18">
+        <span>
+          Adjunct Faculty<br />
+          <a href="https://cs.nyu.edu/home/index.html" target="_blank"
+            >Courant Institute</a
+          >
+        </span>
+      </li>
+
+      <li data-start="2015-07-20" data-end="2019-07-20">
+        <span>
+          <span>Senior Software Engineer</span><br />
+          <a href="https://enigma.com/" target="_blank">Enigma</a>
+        </span>
+      </li>
+
+      <!-- <li data-start="2015-06-10" data-end="2015-06-10">
           <span
-            ><a href="https://expl.re/" target="_blank"
-              >Internaut Explorer</a
+            >Beautiful [&hellip;] Ways to Map the Internet<br />
+            <a href="https://www.wired.com/2015/06/mapping-the-internet/"
+              >WIRED</a
             ></span
           >
-        </li>
+        </li> -->
 
-        <!-- <li>
+      <!-- <li data-start="2015-05-01" data-end="2015-05-01">
+          <span
+            >Best of the Visualisation Web<br />
+            <a
+              href="https://www.visualisingdata.com/2015/07/best-of-the-visualisation-web-may-2015/"
+              >Visualising Data</a
+            >
+          </span>
+        </li> -->
+
+      <li data-start="2015-05-15" data-end="2015-05-15">
+        <span
+          >Web App<br />
+          <a href="https://expl.re/" target="_blank"
+            >Internaut Explorer</a
+          ></span
+        >
+      </li>
+
+      <li data-start="2015-02-14" data-end="2015-02-14">
+        <span
+          >Web App<br />
+          <a href="https://dev.abe.sh/block-chords/" target="_blank"
+            >Block Chords</a
+          >
+        </span>
+      </li>
+
+      <!-- <li data-start="2014-03-04" data-end="2014-06-20">
+          <span>
+            Android&trade; App<br />
+            <a
+              href="https://play.google.com/store/apps/details?id=com.abe.moon&hl=en&gl=US"
+              target="_blank"
+              >Moon</a
+            >
+          </span>
+        </li> -->
+
+      <li data-start="2013-09-01" data-end="2015-05-15">
+        <span>
+          Graduate Student<br />
+          <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
+        </span>
+      </li>
+
+      <!-- <li data-start="2013-03-26" data-end="2014-06-03">
+          <span
+            >Web App<br />
+            <a href="https://abe.sh/madbus/#/" target="_blank">Madbus</a>
+          </span>
+        </li> -->
+
+      <!-- <li>
           I'm Feeling Curious
           <a
             href="https://www.meetup.com/UX-Data/events/254638995/"
@@ -328,89 +351,20 @@
             >GeoNYC</a
           >
         </li>
-        <li>
-          Beautiful, Intriguing, and Illegal Ways to Map the Internet
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >WIRED</a
-          >
-        </li>
-        <li>
-          Best of the Visualisation Web
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >Visualising Data</a
-          >
-        </li> -->
-      </ul>
-
-      <footer><strong>sighrobot</strong> at gmail et al.</footer>
-    </main>
+        -->
+    </ul>
+    <footer><strong>sighrobot</strong>&nbsp;at gmail</footer>
 
     <script>
-      const P = 1;
-
-      // https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
-      function fibonacci(num, memo) {
-        memo = memo || {};
-
-        if (memo[num]) return memo[num];
-        if (num <= 1) return 1;
-
-        return (memo[num] =
-          fibonacci(num - 1, memo) + fibonacci(num - 2, memo));
-      }
-
       function isDark() {
         return (
           window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
+          window.matchMedia("(prefers-color-scheme: dark)").matches
         );
       }
 
-      function size() {
-        const sections = document.querySelectorAll('header > *');
-
-        for (let i = 0; i < sections.length; i++) {
-          const section = sections[i];
-          const fib = fibonacci(i);
-
-          section.style.height =
-            i === 0 ? '1px' : (fib / 100) * window.innerHeight * P + 'px';
-
-          if (i < sections.length - 1) {
-            section.style.marginBottom =
-              (fibonacci(sections.length + 2 - i) / 100) *
-                window.innerHeight *
-                P +
-              'px';
-          }
-        }
-      }
-
-      function graph() {
-        const now = new Date().getTime();
-        const then = new Date('2013-09-01').getTime();
-        const lis = document.querySelectorAll('li');
-
-        for (let i = 0; i < lis.length; i++) {
-          const li = lis[i];
-          const dataStart = li.getAttribute('data-start');
-
-          if (dataStart) {
-            const line = document.createElement('mark');
-            const start = new Date(dataStart).getTime();
-            const dataEnd = li.getAttribute('data-end');
-            const end = dataEnd ? new Date(dataEnd).getTime() : now;
-
-            line.style.width = `${((end - start) / (now - then)) * 100}%`;
-            line.style.left = `${((start - then) / (now - then)) * 100}%`;
-
-            li.appendChild(line);
-          }
-        }
-      }
-
       function color() {
-        const sections = document.querySelectorAll('header > *');
+        const sections = document.querySelectorAll("header > *");
         const dark = isDark();
         const HS = [
           Math.floor(Math.random() * 360),
@@ -421,31 +375,21 @@
           const section = sections[i];
           const L =
             ((dark ? i / 3 : sections.length - i) / sections.length) * 100 +
-            '%';
+            "%";
 
-          section.style.background = `hsl(${[...HS, L].join(',')})`;
+          section.style.background = `hsl(${[...HS, L].join(",")})`;
         }
 
         const L =
           ((isDark() ? sections.length / 3 : 0.75) / sections.length) * 100 +
-          '%';
+          "%";
 
-        document.body.style.background = `hsl(${[...HS, L].join(',')})`;
-
-        const spans = document.querySelectorAll('li > span');
-
-        for (let i = 0; i < spans.length; i++) {
-          const span = spans[i];
-
-          span.style.background = `hsl(${[...HS, L].join(',')})`;
-        }
-
-        return `hsl(${[...HS, '50%'].join(',')})`;
+        return `hsl(${[...HS, "50%"].join(",")})`;
       }
 
       function favicon(color) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
         canvas.width = 100;
         canvas.height = 100;
@@ -462,18 +406,16 @@
           document.head.removeChild(oldLink);
         }
 
-        const link = document.createElement('link');
+        const link = document.createElement("link");
 
-        link.type = 'image/x-icon';
-        link.rel = 'shortcut icon';
-        link.href = canvas.toDataURL('image/png');
+        link.type = "image/x-icon";
+        link.rel = "shortcut icon";
+        link.href = canvas.toDataURL("image/png");
 
-        document.getElementsByTagName('head')[0].appendChild(link);
+        document.getElementsByTagName("head")[0].appendChild(link);
       }
 
-      size();
       favicon(color());
-      graph();
     </script>
   </body>
 </html>
