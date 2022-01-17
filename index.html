@@ -52,16 +52,28 @@
 
       body {
         font-family: "tex", Helvetica, sans-serif;
-        font-size: 17px;
-        margin: 0 10px;
+        margin: 0 40px;
+        line-height: 1.2;
       }
 
       a {
-        /* color: inherit; */
+        opacity: 0.5;
+        color: inherit;
+      }
+
+      h1 {
+        font-size: inherit;
+        margin: 30px 0;
+      }
+
+      h2 {
+        font-size: inherit;
       }
 
       ul {
+        margin: 0;
         padding: 0;
+        list-style-type: none;
       }
 
       li {
@@ -72,6 +84,7 @@
       }
 
       li > ul {
+        list-style-type: circle;
         margin-top: 5px;
         padding-left: 20px;
       }
@@ -85,13 +98,7 @@
       }
 
       footer {
-        padding: 0;
-        line-height: normal;
-        padding: 15px 10px;
-        background: white;
-        text-align: right;
-        position: relative;
-        z-index: 2;
+        padding: 40px 0;
       }
 
       td + td {
@@ -104,17 +111,128 @@
           color: white;
         }
       }
+
+      section + section {
+        margin-top: 40px;
+      }
     </style>
   </head>
-  <body itemscope="" itemtype="http://schema.org/Person">
+  <body>
     <h1>Abe Rubenstein</h1>
-
     <section>
-      <h2>Teaching</h2>
+      <ul>
+        <li class="active" data-start="2021-03-06">
+          <em><a href="https://grex.es/" target="_blank">Orchidex</a></em
+          >, a search and discovery tool for orchid hybrids.
+        </li>
+
+        <li>
+          <em
+            ><a href="https://jca-mc.vercel.app/" target="_blank"
+              >Adventure Log</a
+            ></em
+          >, the data diary of a pandemic-era
+          <a href="https://www.minecraft.net/en-us">Minecraft</a> server.
+        </li>
+
+        <li>
+          <em>Almost Everywhere</em>, a data object created with
+          <a href="https://www.cameronyick.us/">Cameron Yick</a>
+          for
+          <a href="https://2020.datathroughdesign.com/2020" target="_blank"
+            >Data Through Design</a
+          >.
+        </li>
+
+        <li data-start="2019-09-01" data-end="2019-09-01">
+          <em
+            ><a
+              href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+              target="_blank"
+              >You Are Here</a
+            ></em
+          >, a browser extension that reminds you where you came from.
+        </li>
+
+        <li>
+          <em
+            ><a href="https://publicdata.today/" target="_blank"
+              >Today in Public Data</a
+            ></em
+          >, your guide to public data, past, present, and future.
+        </li>
+
+        <li>
+          <em
+            ><a href="https://expl.re/" target="_blank"
+              >Internaut Explorer</a
+            ></em
+          >, an experimental visualization of
+          <a href="https://en.wikipedia.org/wiki/DMOZ">DMOZ</a>.
+        </li>
+
+        <li>
+          <em
+            ><a href="https://abe.sh/block-chords" target="_blank"
+              >Block Chords</a
+            ></em
+          >, a randomly-generated interactive audio-visual environment.
+        </li>
+      </ul>
+    </section>
+    <!-- <section>
       <ul>
         <li>
-          <strong>Part-Time Faculty</strong>, Parsons School of Design, The New
-          School
+          <em>Exploring Company Footprints</em> –
+          <a href="https://enigma.com/blog/post/exploring-company-footprints"
+            >Enigma Blog</a
+          >
+        </li>
+        <li>
+          <em
+            >Boom or Bust! What Enigma's newest project tells us about the
+            economy of North Dakota</em
+          >
+          – <a href="https://carto.com/blog/boom-or-bust/">CARTO Blog</a>
+        </li>
+        <li>
+          <em>Beautiful Intriguing, and Illegal Ways to Map the Internet</em> –
+          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
+            >WIRED</a
+          >
+          (<em>Internaut Explorer</em>)
+        </li>
+
+        <li>
+          <em>Best of the Visualisation Web</em> –
+          <a
+            href="https://www.visualisingdata.com/2015/07/best-of-the-visualisation-web-may-2015/"
+            >Visualising Data</a
+          >
+          (<em>Internaut Explorer</em>)
+        </li>
+      </ul>
+    </section> -->
+
+    <section>
+      <ul>
+        <li class="active" data-start="2019-10-07">
+          Software Engineer, Data Visualization,
+          <a href="https://www.datadoghq.com/" target="_blank">Datadog</a> –
+          2019-present
+        </li>
+
+        <li data-start="2015-07-20" data-end="2019-07-20">
+          Senior Software Engineer,
+          <a href="https://enigma.com/" target="_blank">Enigma</a> – 2015-2019
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>
+          Part-Time Faculty, Parsons School of Design, The New School
           <ul>
             <li>
               <a href="https://courses.newschool.edu/courses/PSAM5170/"
@@ -125,8 +243,8 @@
           </ul>
         </li>
         <li>
-          <strong>Lecturer</strong>, Spatial Analysis &amp; Visualization
-          Initiative (SAVI), Pratt Institute
+          Lecturer, Spatial Analysis &amp; Visualization Initiative (SAVI),
+          Pratt Institute
 
           <ul>
             <li>
@@ -139,7 +257,7 @@
           </ul>
         </li>
         <li>
-          <strong>Visiting Critic</strong>, Rhode Island School of Design (RISD)
+          Visiting Critic, Rhode Island School of Design (RISD)
           <ul>
             <li>
               <a
@@ -151,8 +269,8 @@
           </ul>
         </li>
         <li>
-          <strong>Adjunct Faculty</strong>, Courant Institute of Mathematical
-          Sciences (CIMS), New York University
+          Adjunct Faculty, Courant Institute of Mathematical Sciences (CIMS),
+          New York University
           <ul>
             <li>
               <a href="https://cs.nyu.edu/dynamic/courses/catalog/level/UA/"
@@ -165,143 +283,20 @@
       </ul>
     </section>
 
+    <section>
+      <ul>
+        <li>
+          M.P.S., Interactive Telecommunications Program (ITP), New York
+          University
+        </li>
+        <li>
+          B.A., Computer Sciences & Radio-TV-Film, University of
+          Wisconsin-Madison
+        </li>
+      </ul>
+    </section>
+
     <ul>
-      <li class="active" data-start="2021-03-06">
-        <span>
-          Web App<br />
-          <a href="https://grex.es/" target="_blank">Orchidex</a>
-        </span>
-      </li>
-
-      <li data-start="2021-01-17" data-end="2021-05-30">
-        <span>
-          Web App<br />
-          <a href="https://jca-mc.vercel.app/" target="_blank">Minegraphed</a>
-        </span>
-      </li>
-
-      <li data-start="2020-08-31" data-end="2020-12-14">
-        <span>
-          Part-Time Faculty<br />
-          <a
-            href="https://courses.newschool.edu/courses/PSAM5170/"
-            target="_blank"
-            >Parsons</a
-          >
-        </span>
-      </li>
-
-      <li data-start="2020-02-16" data-end="2020-02-16">
-        <span>
-          Almost Everywhere<br />
-          <a href="https://2020.datathroughdesign.com/2020" target="_blank"
-            >Data Through Design</a
-          >
-        </span>
-      </li>
-
-      <li class="active" data-start="2019-10-07">
-        <span>
-          Software Engineer, Data Visualization<br />
-          <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
-        </span>
-      </li>
-
-      <li data-start="2019-09-01" data-end="2019-09-01">
-        <span>
-          Chrome Extension<br />
-          <a
-            href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
-            target="_blank"
-            >You Are Here</a
-          >
-        </span>
-      </li>
-
-      <li data-start="2018-09-01" data-end="2019-10-14">
-        <span>
-          Lecturer<br />
-          <a href="https://commons.pratt.edu/savi/" target="_blank"
-            >Pratt SAVI</a
-          >
-        </span>
-      </li>
-
-      <li data-start="2018-05-30" data-end="2018-05-30">
-        <span>
-          Web App<br />
-          <a href="https://publicdata.today/" target="_blank"
-            >Today in Public Data</a
-          >
-        </span>
-      </li>
-
-      <li data-start="2018-01-16" data-end="2018-01-17">
-        <span>
-          Visiting Critic<br />
-          <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
-        </span>
-      </li>
-
-      <!-- <li data-start="2015-11-07" data-end="2017-02-01">
-          <span>
-            <a href="https://boundless.js.org/" target="_blank">Boundless</a>
-          </span>
-        </li> -->
-
-      <li data-start="2016-01-20" data-end="2016-12-18">
-        <span>
-          Adjunct Faculty<br />
-          <a href="https://cs.nyu.edu/home/index.html" target="_blank"
-            >Courant Institute</a
-          >
-        </span>
-      </li>
-
-      <li data-start="2015-07-20" data-end="2019-07-20">
-        <span>
-          <span>Senior Software Engineer</span><br />
-          <a href="https://enigma.com/" target="_blank">Enigma</a>
-        </span>
-      </li>
-
-      <!-- <li data-start="2015-06-10" data-end="2015-06-10">
-          <span
-            >Beautiful [&hellip;] Ways to Map the Internet<br />
-            <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-              >WIRED</a
-            ></span
-          >
-        </li> -->
-
-      <!-- <li data-start="2015-05-01" data-end="2015-05-01">
-          <span
-            >Best of the Visualisation Web<br />
-            <a
-              href="https://www.visualisingdata.com/2015/07/best-of-the-visualisation-web-may-2015/"
-              >Visualising Data</a
-            >
-          </span>
-        </li> -->
-
-      <li data-start="2015-05-15" data-end="2015-05-15">
-        <span
-          >Web App<br />
-          <a href="https://expl.re/" target="_blank"
-            >Internaut Explorer</a
-          ></span
-        >
-      </li>
-
-      <li data-start="2015-02-14" data-end="2015-02-14">
-        <span
-          >Web App<br />
-          <a href="https://dev.abe.sh/block-chords/" target="_blank"
-            >Block Chords</a
-          >
-        </span>
-      </li>
-
       <!-- <li data-start="2014-03-04" data-end="2014-06-20">
           <span>
             Android&trade; App<br />
@@ -312,13 +307,6 @@
             >
           </span>
         </li> -->
-
-      <li data-start="2013-09-01" data-end="2015-05-15">
-        <span>
-          Graduate Student<br />
-          <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
-        </span>
-      </li>
 
       <!-- <li data-start="2013-03-26" data-end="2014-06-03">
           <span
@@ -353,7 +341,7 @@
         </li>
         -->
     </ul>
-    <footer><strong>sighrobot</strong>&nbsp;at gmail</footer>
+    <footer>sighrobot at gmail</footer>
 
     <script>
       function isDark() {
@@ -383,6 +371,8 @@
         const L =
           ((isDark() ? sections.length / 3 : 0.75) / sections.length) * 100 +
           "%";
+
+        document.body.style.background = `hsl(${[...HS, "75%"].join(",")})`;
 
         return `hsl(${[...HS, "50%"].join(",")})`;
       }
