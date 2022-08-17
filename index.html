@@ -125,10 +125,6 @@
         z-index: 1;
       }
 
-      li.active {
-        box-shadow: inset 5px 0 white;
-      }
-
       li:hover mark,
       mark:hover {
         background: white;
@@ -152,10 +148,7 @@
         } */
       }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          /* color: black; */
-        }
+      /* @media (prefers-color-scheme: dark) {
         header {
           background: black;
         }
@@ -163,10 +156,7 @@
         mark {
           background: rgba(0, 0, 0, 0.05);
         }
-        li.active {
-          /* box-shadow: inset 5px 0 black; */
-        }
-      }
+      } */
     </style>
   </head>
   <body
@@ -191,9 +181,9 @@
 
     <main>
       <ul>
-        <li class="active" data-start="2019-10-07">
+        <li data-start="2019-10-07">
           <span>
-            Software Engineer, Dataviz
+            Software Engineer
             <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
           </span>
         </li>
@@ -252,6 +242,12 @@
       </ul>
 
       <ul>
+        <li data-start="2021-03-06">
+          <span>
+            <a href="https://grex.es/" target="_blank">Orchidex</a>
+          </span>
+        </li>
+
         <li data-start="2020-02-16" data-end="2020-03-11">
           <span>
             <a href="https://2020.datathroughdesign.com/2020" target="_blank"
@@ -289,13 +285,13 @@
         </li> -->
 
         <!-- <li><a href="/progression/" target="_blank">Progression</a></li> -->
-        <li data-start="2015-02-14" data-end="2015-02-14">
+        <!-- <li data-start="2015-02-14" data-end="2015-02-14">
           <span>
             <a href="https://dev.abe.sh/block-chords/" target="_blank"
               >Block Chords</a
             >
           </span>
-        </li>
+        </li> -->
         <li data-start="2014-12-09" data-end="2015-05-15">
           <span
             ><a href="https://expl.re/" target="_blank"
@@ -360,10 +356,11 @@
       }
 
       function isDark() {
-        return (
-          window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
-        );
+        return false;
+        // return (
+        //   window.matchMedia &&
+        //   window.matchMedia('(prefers-color-scheme: dark)').matches
+        // );
       }
 
       function size() {
