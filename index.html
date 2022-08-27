@@ -37,12 +37,12 @@
       }
 
       body {
-        color: white;
         font-family: 'Helvetica Neue', Helvetica, sans-serif;
         margin: 0;
         font-weight: 200;
         letter-spacing: 0.25px;
         font-size: 16px;
+        padding-bottom: 30px;
       }
 
       a {
@@ -55,40 +55,33 @@
         cursor: pointer;
       }
 
+      header {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        z-index: 45;
+      }
+
       h1 {
+        position: relative;
         user-select: none;
         margin: 0;
-        text-transform: uppercase;
-        font-size: inherit;
+        font-size: 16px;
         font-weight: 400;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
+        padding: 20px;
         -webkit-tap-highlight-color: transparent;
-        transition: 200ms ease text-shadow;
-        align-items: center;
         display: flex;
+        justify-content: space-between;
       }
 
-      footer {
-        padding: 0;
-        line-height: normal;
-        padding: 0 20px;
-        margin-top: 50px;
-        margin-bottom: 10px;
-        /* text-align: right; */
+      h1 div {
+        font-weight: 200;
       }
 
-      footer strong {
+      strong {
         font-weight: normal;
-      }
-
-      h3 {
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: inherit;
       }
 
       ul {
@@ -97,296 +90,187 @@
         margin: 0;
         justify-content: flex-start;
         width: 100%;
-        margin-top: ;
-      }
-
-      ul + ul {
-        margin-top: 40px;
-      }
-
-      main {
-        padding: 20px 0;
-      }
-
-      header {
-        background: white;
       }
 
       li {
         padding: 10px 20px;
         position: relative;
-        display: flex;
-        align-items: center;
+        z-index: 2;
         line-height: normal;
+        transition: 200ms ease background;
       }
 
-      li span {
-        position: relative;
-        z-index: 1;
-      }
-
-      li:hover mark,
-      mark:hover {
-        background: white;
+      @media (hover: hover) and (pointer: fine) {
+        li:hover {
+          background: rgba(255, 255, 255, 0.6);
+        }
       }
 
       mark {
         position: absolute;
-        height: 8px;
-        display: block;
-        display: none;
-        min-width: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        background: none;
-        transition: 200ms background ease;
+        top: 0%;
+        bottom: 0%;
+        min-width: 10px;
+        pointer-events: none;
       }
 
-      @media (max-width: 768px) {
-        /* h1,
-        main {
-          padding: 20px 10px;
-        } */
+      #axis {
+        top: 0;
+        z-index: 23;
+        height: 20px;
+        padding: 5px 0;
+        background: linear-gradient(to right, transparent, white);
+        border-top: 1px solid rgba(0, 0, 0, 0.06125);
       }
 
-      /* @media (prefers-color-scheme: dark) {
-        header {
-          background: black;
-        }
+      #axis span {
+        font-size: 8px;
+        position: absolute;
+        transform: translateX(-4px);
+      }
 
-        mark {
-          background: rgba(0, 0, 0, 0.05);
-        }
-      } */
+      aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      aside hr {
+        width: 1px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.06125);
+        border: none;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+
+      ul {
+        margin-top: 20px;
+      }
+
+      ul:first-child {
+        margin-top: 0px;
+      }
     </style>
   </head>
-  <body
-    itemscope=""
-    itemtype="http://schema.org/Person"
-    style="background: rgb(87, 137, 67)"
-  >
+  <body>
     <header>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-
       <h1>
-        <span onclick="favicon(color())">
-          <span itemprop="givenName">Abe</span>
-          <span itemprop="familyName">Rubenstein</span>
-        </span>
+        <span onclick="doTheThing()">Abe Rubenstein</span>
+        <div><strong>sighrobot</strong>&nbsp;at gmail</div>
       </h1>
     </header>
 
+    <div id="axis"></div>
+    <aside></aside>
+
     <main>
       <ul>
-        <li data-start="2019-10-07">
-          <span>
-            Software Engineer
-            <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
-          </span>
+        <li class="active" data-start="2019-10-07">
+          <a href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+          Software Engineer
         </li>
 
         <li data-start="2015-07-20" data-end="2019-07-20">
-          <span>
-            Senior Software Engineer
-            <a href="https://enigma.com/" target="_blank">Enigma</a>
-          </span>
+          <a href="https://enigma.com/" target="_blank">Enigma</a>
+          Senior Software Engineer
         </li>
       </ul>
-
       <ul>
         <li data-start="2020-08-31" data-end="2020-12-14">
-          <span>
-            Part-Time Faculty
-            <a
-              href="https://courses.newschool.edu/courses/PSAM5170/"
-              target="_blank"
-              >Parsons</a
-            >
-          </span>
+          <a
+            href="https://courses.newschool.edu/courses/PSAM5170/"
+            target="_blank"
+            >Parsons</a
+          >
+          Part-Time Faculty
         </li>
 
         <li data-start="2018-09-01" data-end="2019-10-14">
-          <span>
-            Lecturer
-            <a href="https://commons.pratt.edu/savi/" target="_blank"
-              >Pratt SAVI</a
-            >
-          </span>
+          <a
+            href="https://www.pratt.edu/research/spatial-analysis-visualization-initiative/"
+            target="_blank"
+            >Pratt SAVI</a
+          >
+          Lecturer
         </li>
 
         <li data-start="2018-01-16" data-end="2018-01-17">
-          <span>
-            Visiting Critic
-            <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
-          </span>
+          <a href="https://ctc.risd.edu/" target="_blank">RISD</a>
+          Visiting Critic
         </li>
 
         <li data-start="2016-01-20" data-end="2016-12-18">
-          <span>
-            Adjunct Faculty
-            <a href="https://cs.nyu.edu/home/index.html" target="_blank"
-              >Courant</a
-            >
-          </span>
+          <a href="https://cs.nyu.edu/home/index.html" target="_blank"
+            >NYU Courant</a
+          >
+          Adjunct Faculty
         </li>
 
-        <li data-start="2013-09-01" data-end="2015-05-01">
-          <span>
-            Graduate Student
-            <a href="https://tisch.nyu.edu/itp" target="_blank">ITP</a>
-          </span>
+        <li data-start="2013-09-01" data-end="2015-05-15">
+          <a
+            href="https://itp.nyu.edu/shows/thesis2015/abe-rubenstein/"
+            target="_blank"
+            >ITP</a
+          >
+          Graduate Student
         </li>
       </ul>
 
       <ul>
-        <li data-start="2021-03-06">
-          <span>
-            <a href="https://grex.es/" target="_blank">Orchidex</a>
-          </span>
+        <li data-start="2021-03-06" data-end="2021-03-06">
+          <a href="https://grex.es/" target="_blank">Orchidex</a>
         </li>
 
-        <li data-start="2020-02-16" data-end="2020-03-11">
-          <span>
-            <a href="https://2020.datathroughdesign.com/2020" target="_blank"
-              >Almost Everywhere</a
-            >
-          </span>
+        <li data-start="2021-01-02" data-end="2021-01-02">
+          <a href="https://jca-mc.vercel.app/" target="_blank">Adventure Log</a>
         </li>
 
-        <li data-start="2019-09-01" data-end="2019-09-28">
-          <span>
-            <a
-              href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
-              target="_blank"
-              >You Are Here</a
-            >
-          </span>
-        </li>
-        <!-- <li data-start="2019-01-27" data-end="2019-01-27">
-          <span>
-            <a href="/plotbox/" target="_blank">Plotbox</a>
-          </span>
-        </li> -->
-        <li data-start="2018-05-30" data-end="2020-03-30">
-          <span>
-            <a href="https://publicdata.today/" target="_blank"
-              >Today in Public Data</a
-            >
-          </span>
+        <li data-start="2020-02-16" data-end="2020-02-16">
+          <a href="https://datathroughdesign.com/2020" target="_blank"
+            >Almost Everywhere</a
+          >
         </li>
 
-        <!-- <li data-start="2015-11-07" data-end="2017-02-01">
-          <span>
-            <a href="https://enigma.com/" target="_blank">Boundless</a>
-          </span>
-        </li> -->
+        <li data-start="2019-09-01" data-end="2019-09-01">
+          <a
+            href="https://chrome.google.com/webstore/detail/you-are-here/lbokfljkofcjfiikdpaiodcoekbennbe"
+            target="_blank"
+            >You Are Here</a
+          >
+        </li>
 
-        <!-- <li><a href="/progression/" target="_blank">Progression</a></li> -->
+        <li data-start="2018-05-30" data-end="2018-05-30">
+          <a href="https://publicdata.today/" target="_blank"
+            >Today in Public Data</a
+          >
+        </li>
+
+        <li data-start="2015-05-15" data-end="2015-05-15">
+          <a href="https://expl.re/" target="_blank">Internaut Explorer</a>
+        </li>
+
         <!-- <li data-start="2015-02-14" data-end="2015-02-14">
-          <span>
+          <span
+            >Web App<br />
             <a href="https://dev.abe.sh/block-chords/" target="_blank"
               >Block Chords</a
             >
           </span>
         </li> -->
-        <li data-start="2014-12-09" data-end="2015-05-15">
-          <span
-            ><a href="https://expl.re/" target="_blank"
-              >Internaut Explorer</a
-            ></span
-          >
-        </li>
-
-        <!-- <li>
-          I'm Feeling Curious
-          <a
-            href="https://www.meetup.com/UX-Data/events/254638995/"
-            target="_blank"
-            >UX + Data</a
-          >
-        </li>
-        <li>
-          Public Data Using Next.js
-          <a
-            href="https://www.meetup.com/ReactNYC/events/251044227/"
-            target="_blank"
-            >ReactNYC</a
-          >
-        </li>
-        <li>
-          Total Eclipse of the Heartland
-          <a
-            href="https://www.meetup.com/geonyc/events/241643293/"
-            target="_blank"
-            >GeoNYC</a
-          >
-        </li>
-        <li>
-          Beautiful, Intriguing, and Illegal Ways to Map the Internet
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >WIRED</a
-          >
-        </li>
-        <li>
-          Best of the Visualisation Web
-          <a href="https://www.wired.com/2015/06/mapping-the-internet/"
-            >Visualising Data</a
-          >
-        </li> -->
       </ul>
-
-      <footer><strong>sighrobot</strong> at gmail et al.</footer>
     </main>
 
     <script>
-      const P = 1;
-
-      // https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
-      function fibonacci(num, memo) {
-        memo = memo || {};
-
-        if (memo[num]) return memo[num];
-        if (num <= 1) return 1;
-
-        return (memo[num] =
-          fibonacci(num - 1, memo) + fibonacci(num - 2, memo));
-      }
-
-      function isDark() {
-        return false;
-        // return (
-        //   window.matchMedia &&
-        //   window.matchMedia('(prefers-color-scheme: dark)').matches
-        // );
-      }
-
-      function size() {
-        const sections = document.querySelectorAll('header > *');
-
-        for (let i = 0; i < sections.length; i++) {
-          const section = sections[i];
-          const fib = fibonacci(i);
-
-          section.style.height =
-            i === 0 ? '1px' : (fib / 100) * window.innerHeight * P + 'px';
-
-          if (i < sections.length - 1) {
-            section.style.marginBottom =
-              (fibonacci(sections.length + 2 - i) / 100) *
-                window.innerHeight *
-                P +
-              'px';
-          }
-        }
-      }
-
-      function graph() {
+      function graph(c) {
         const now = new Date().getTime();
         const then = new Date('2013-09-01').getTime();
         const lis = document.querySelectorAll('li');
+        const hslaString = c.split('hsl(')[1].split(')')[0];
 
         for (let i = 0; i < lis.length; i++) {
           const li = lis[i];
@@ -398,43 +282,48 @@
             const dataEnd = li.getAttribute('data-end');
             const end = dataEnd ? new Date(dataEnd).getTime() : now;
 
+            line.style.background = `linear-gradient(to right, hsla(${hslaString}, ${
+              ((start - then) / (now - then)) * 0.6
+            }), hsla(${hslaString}, ${((end - then) / (now - then)) * 0.6}))`;
             line.style.width = `${((end - start) / (now - then)) * 100}%`;
             line.style.left = `${((start - then) / (now - then)) * 100}%`;
 
+            if (li.querySelector('mark')) {
+              li.removeChild(li.querySelector('mark'));
+            }
             li.appendChild(line);
+          }
+        }
+
+        const aside = document.querySelector('aside');
+        const axis = document.getElementById('axis');
+
+        if (!aside.hasChildNodes() && !axis.hasChildNodes()) {
+          for (let i = 2014; i < 2023; i++) {
+            const tick = document.createElement('span');
+            tick.innerText = i.toString().slice(2, 4);
+            const line = document.createElement('hr');
+            const date = new Date(`${i}-01-01`).getTime();
+
+            line.style.left = `${((date - then) / (now - then)) * 100}%`;
+            tick.style.left = `${((date - then) / (now - then)) * 100}%`;
+
+            aside.appendChild(line);
+            axis.appendChild(tick);
           }
         }
       }
 
-      function color() {
-        const sections = document.querySelectorAll('header > *');
-        const dark = isDark();
+      function color(setBackground) {
         const HS = [
           Math.floor(Math.random() * 360),
           `${Math.floor(Math.random() * 100)}%`,
         ];
 
-        for (let i = 0; i < sections.length; i++) {
-          const section = sections[i];
-          const L =
-            ((dark ? i / 3 : sections.length - i) / sections.length) * 100 +
-            '%';
+        const L = 0.9 * 100 + '%';
 
-          section.style.background = `hsl(${[...HS, L].join(',')})`;
-        }
-
-        const L =
-          ((isDark() ? sections.length / 3 : 0.75) / sections.length) * 100 +
-          '%';
-
-        document.body.style.background = `hsl(${[...HS, L].join(',')})`;
-
-        const spans = document.querySelectorAll('li > span');
-
-        for (let i = 0; i < spans.length; i++) {
-          const span = spans[i];
-
-          span.style.background = `hsl(${[...HS, L].join(',')})`;
+        if (setBackground) {
+          document.body.style.background = `hsl(${[...HS, L].join(',')})`;
         }
 
         return `hsl(${[...HS, '50%'].join(',')})`;
@@ -453,14 +342,13 @@
         ctx.fillRect(0, 82, canvas.width, 5);
         ctx.fillRect(0, 92, canvas.width, 8);
 
-        const oldLink = document.querySelector("link[rel*='icon']");
+        let link = document.querySelector("link[rel*='icon']");
 
-        if (oldLink) {
-          document.head.removeChild(oldLink);
+        if (link) {
+          document.head.removeChild(link);
         }
 
-        const link = document.createElement('link');
-
+        link = document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
         link.href = canvas.toDataURL('image/png');
@@ -468,9 +356,12 @@
         document.getElementsByTagName('head')[0].appendChild(link);
       }
 
-      size();
-      favicon(color());
-      graph();
+      function doTheThing() {
+        favicon(color(true));
+        graph(color());
+      }
+
+      doTheThing();
     </script>
   </body>
 </html>
