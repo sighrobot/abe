@@ -37,7 +37,7 @@
       }
 
       body {
-        font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
         margin: 0;
         font-weight: 200;
         letter-spacing: 0.25px;
@@ -228,7 +228,7 @@
         </li>
 
         <li data-start="2021-01-02" data-end="2021-01-02">
-          <a href="https://jca-mc.vercel.app/" target="_blank">Adventure Log</a>
+          <a href="https://mc.abe.sh/" target="_blank">Adventure Log</a>
         </li>
 
         <li data-start="2020-02-16" data-end="2020-02-16">
@@ -269,18 +269,18 @@
     <script>
       function graph(c) {
         const now = new Date().getTime();
-        const then = new Date('2013-09-01').getTime();
-        const lis = document.querySelectorAll('li');
-        const hslaString = c.split('hsl(')[1].split(')')[0];
+        const then = new Date("2013-09-01").getTime();
+        const lis = document.querySelectorAll("li");
+        const hslaString = c.split("hsl(")[1].split(")")[0];
 
         for (let i = 0; i < lis.length; i++) {
           const li = lis[i];
-          const dataStart = li.getAttribute('data-start');
+          const dataStart = li.getAttribute("data-start");
 
           if (dataStart) {
-            const line = document.createElement('mark');
+            const line = document.createElement("mark");
             const start = new Date(dataStart).getTime();
-            const dataEnd = li.getAttribute('data-end');
+            const dataEnd = li.getAttribute("data-end");
             const end = dataEnd ? new Date(dataEnd).getTime() : now;
 
             line.style.background = `linear-gradient(to right, hsla(${hslaString}, ${
@@ -289,21 +289,21 @@
             line.style.width = `${((end - start) / (now - then)) * 100}%`;
             line.style.left = `${((start - then) / (now - then)) * 100}%`;
 
-            if (li.querySelector('mark')) {
-              li.removeChild(li.querySelector('mark'));
+            if (li.querySelector("mark")) {
+              li.removeChild(li.querySelector("mark"));
             }
             li.appendChild(line);
           }
         }
 
-        const aside = document.querySelector('aside');
-        const axis = document.getElementById('axis');
+        const aside = document.querySelector("aside");
+        const axis = document.getElementById("axis");
 
         if (!aside.hasChildNodes() && !axis.hasChildNodes()) {
           for (let i = 2014; i < 2024; i++) {
-            const tick = document.createElement('span');
+            const tick = document.createElement("span");
             tick.innerText = i.toString().slice(2, 4);
-            const line = document.createElement('hr');
+            const line = document.createElement("hr");
             const date = new Date(`${i}-01-01`).getTime();
 
             line.style.left = `${((date - then) / (now - then)) * 100}%`;
@@ -321,18 +321,18 @@
           `${Math.floor(Math.random() * 100)}%`,
         ];
 
-        const L = 0.9 * 100 + '%';
+        const L = 0.9 * 100 + "%";
 
         if (setBackground) {
-          document.body.style.background = `hsl(${[...HS, L].join(',')})`;
+          document.body.style.background = `hsl(${[...HS, L].join(",")})`;
         }
 
-        return `hsl(${[...HS, '50%'].join(',')})`;
+        return `hsl(${[...HS, "50%"].join(",")})`;
       }
 
       function favicon(color) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
         canvas.width = 100;
         canvas.height = 100;
@@ -349,12 +349,12 @@
           document.head.removeChild(link);
         }
 
-        link = document.createElement('link');
-        link.type = 'image/x-icon';
-        link.rel = 'shortcut icon';
-        link.href = canvas.toDataURL('image/png');
+        link = document.createElement("link");
+        link.type = "image/x-icon";
+        link.rel = "shortcut icon";
+        link.href = canvas.toDataURL("image/png");
 
-        document.getElementsByTagName('head')[0].appendChild(link);
+        document.getElementsByTagName("head")[0].appendChild(link);
       }
 
       function doTheThing() {
